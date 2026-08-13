@@ -1,4 +1,4 @@
-﻿id,id_računa,izdelek,datum,id_prodajalca,id_poslovalnice
+﻿id,id_racuna,izdelek,datum,id_prodajalca,id_poslovalnice
 1,100000026,Nektarine lahko 1 l,01/01/2024,1168,1010
 2,100000026,"Feta sir ekstra 1,5 l",01/01/2024,1168,1010
 3,100000026,Ledeni čaj izbrano 300 g,01/01/2024,1168,1010

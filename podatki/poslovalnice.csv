@@ -1,4 +1,4 @@
-id,ime,id_poslovalnice,delovni_cas,kraj,naslov,poštna_številka,telefon
+id,ime,id_poslovalnice,delovni_cas,kraj,naslov,postna_stevilka,telefon
 1,Lupek Velenje Center,1001,"Pon-Pet 08:00-20:00, Sob 08:00-13:00",Velenje,Cesta Simona Blatnika 12,3320,03 890 1001
 2,Lupek Celje Jug,1002,"Pon-Pet 08:00-19:00, Sob 08:00-13:00",Celje,Mariborska cesta 45,3000,03 890 1002
 3,Lupek Ljubljana BTC,1003,Pon-Sob 09:00-21:00,Ljubljana,Ameriška ulica 8,1000,01 890 1003

@@ -1,4 +1,4 @@
-﻿id,id_računa,izdelek,datum,id_prodajalca,id_poslovalnice
+﻿id,id_racuna,izdelek,datum,id_prodajalca,id_poslovalnice
 1,200001200,Zamrznjena juha tradicionalno 1 l,01/01/2025,6080,1008
 2,200001200,Jabolčni kis sveže 2 l,01/01/2025,6080,1008
 3,200001333,Grisini ekstra 1 kg,01/01/2025,7264,1001

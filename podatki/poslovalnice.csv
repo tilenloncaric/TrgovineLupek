@@ -1,11 +1,11 @@
-id;ime;id_poslovalnice;delovni_cas;kraj;naslov;poštna_številka;telefon
-1;Lupek Velenje Center;1001;"Pon-Pet 08:00-20:00; Sob 08:00-13:00";Velenje;Cesta Simona Blatnika 12;3320;03 890 1001
-2;Lupek Celje Jug;1002;"Pon-Pet 08:00-19:00; Sob 08:00-13:00";Celje;Mariborska cesta 45;3000;03 890 1002
-3;Lupek Ljubljana BTC;1003;Pon-Sob 09:00-21:00;Ljubljana;Ameriška ulica 8;1000;01 890 1003
-4;Lupek Maribor Center;1004;"Pon-Pet 08:00-20:00; Sob 08:00-15:00";Maribor;Tržaška cesta 21;2000;02 890 1004
-5;Lupek Koper;1005;"Pon-Pet 09:00-19:00; Sob 09:00-13:00";Koper;Ankaranska cesta 5;6000;05 890 1005
-6;Lupek Novo Mesto;1006;"Pon-Pet 08:00-19:00; Sob 08:00-12:00";Novo Mesto;Ljubljanska cesta 17;8000;07 890 1006
-7;Lupek Kranj;1007;"Pon-Pet 08:00-19:00; Sob 08:00-13:00";Kranj;Šuceva ulica 10;4000;04 890 1007
-8;Lupek Murska Sobota;1008;"Pon-Pet 08:00-18:00; Sob 08:00-12:00";Murska Sobota;Plese 2;9000;02 890 1008
-9;Lupek Nova Gorica;1009;"Pon-Pet 08:00-19:00; Sob 08:00-13:00";Nova Gorica;Industrijska cesta 14;5000;05 890 1009
-10;Lupek Ptuj;1010;"Pon-Pet 08:00-18:00; Sob 08:00-12:00";Ptuj;Ormoška cesta 33;2250;02 890 1010
+id,ime,id_poslovalnice,delovni_cas,kraj,naslov,poÅ¡tna_Å¡tevilka,telefon
+1,Lupek Velenje Center,1001,"Pon-Pet 08:00-20:00, Sob 08:00-13:00",Velenje,Cesta Simona Blatnika 12,3320,03 890 1001
+2,Lupek Celje Jug,1002,"Pon-Pet 08:00-19:00, Sob 08:00-13:00",Celje,Mariborska cesta 45,3000,03 890 1002
+3,Lupek Ljubljana BTC,1003,Pon-Sob 09:00-21:00,Ljubljana,AmeriÅ¡ka ulica 8,1000,01 890 1003
+4,Lupek Maribor Center,1004,"Pon-Pet 08:00-20:00, Sob 08:00-15:00",Maribor,TrÅ¾aÅ¡ka cesta 21,2000,02 890 1004
+5,Lupek Koper,1005,"Pon-Pet 09:00-19:00, Sob 09:00-13:00",Koper,Ankaranska cesta 5,6000,05 890 1005
+6,Lupek Novo Mesto,1006,"Pon-Pet 08:00-19:00, Sob 08:00-12:00",Novo Mesto,Ljubljanska cesta 17,8000,07 890 1006
+7,Lupek Kranj,1007,"Pon-Pet 08:00-19:00, Sob 08:00-13:00",Kranj,Å uceva ulica 10,4000,04 890 1007
+8,Lupek Murska Sobota,1008,"Pon-Pet 08:00-18:00, Sob 08:00-12:00",Murska Sobota,Plese 2,9000,02 890 1008
+9,Lupek Nova Gorica,1009,"Pon-Pet 08:00-19:00, Sob 08:00-13:00",Nova Gorica,Industrijska cesta 14,5000,05 890 1009
+10,Lupek Ptuj,1010,"Pon-Pet 08:00-18:00, Sob 08:00-12:00",Ptuj,OrmoÅ¡ka cesta 33,2250,02 890 1010

@@ -1,4 +1,4 @@
-﻿id,id_zaposlenega,datum,čas_prihoda,čas_odhoda,delovna_obveznost
+﻿id,id_zaposlenega,datum,cas_prihoda,cas_odhoda,delovna_obveznost
 1,5273,1.01.2025,06:02:00,11:23:00,6
 2,1032,1.01.2025,06:03:00,10:57:00,7
 3,4118,1.01.2025,06:05:00,10:44:00,8

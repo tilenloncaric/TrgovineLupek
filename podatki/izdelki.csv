@@ -1,4 +1,4 @@
-﻿id,ime,nabavna_cena,prodajna_cena,država_porekla,dobavitelj,id_izdelka
+﻿id,ime,nabavna_cena,prodajna_cena,drzava_porekla,dobavitelj,id_izdelka
 1,"Ajdov kruh bio 1,5 kg",3.02,3.8,Hrvaška,Jadran Export,3831000004555
 2,"Ajdov kruh bio 6 x 0,5 l",0.45,0.73,Italija,Global Food Partner,3831000004852
 3,Ajdov kruh mini 250 g,0.77,1.04,Avstrija,Terra Verde,3831000001752

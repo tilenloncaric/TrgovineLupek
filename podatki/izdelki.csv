@@ -1,0 +1,501 @@
+﻿id,ime,nabavna_cena,prodajna_cena,država_porekla,dobavitelj,id_izdelka
+1,"Ajdov kruh bio 1,5 kg",3.02,3.8,Hrvaška,Jadran Export,3831000004555
+2,"Ajdov kruh bio 6 x 0,5 l",0.45,0.73,Italija,Global Food Partner,3831000004852
+3,Ajdov kruh mini 250 g,0.77,1.04,Avstrija,Terra Verde,3831000001752
+4,Ajdov kruh sveže 250 g,1.99,2.74,Italija,Mlečna Pot d.o.o.,3831000002957
+5,Ajdova moka klasično 1 kg,2.3,3.09,Madžarska,Panvita Dobava,3831000000069
+6,Ajdova moka klasično 1 kg - serija 98,3.71,5.9,Francija,Zlato Polje Distribucija,3831000001462
+7,Ajdova moka lahko 100 g,0.72,0.98,Slovenija,AgroFresh Slovenija,3831000003466
+8,Ajdova moka maxi 1 kg,0.46,0.65,Avstrija,Terra Verde,3831000004364
+9,"Ajdova moka pakirano 1,5 kg",2.41,3.73,Avstrija,Global Food Partner,3831000003763
+10,"Ajdova moka pakirano 6 x 0,5 l",3.86,5.44,Francija,Gorenje Gastro Nabava,3831000001967
+11,Ananas klasično 250 g,4.18,6.44,Ekvador,Sava Trade Foods,3831000000816
+12,Ananas lahko 12 x 1 l,0.65,0.87,Ekvador,Jadran Export,3831000003411
+13,Avokado mini 2 kg,2.77,3.59,Kolumbija,Global Food Partner,3831000000113
+14,Avokado mini 250 g,3.1,4.62,Hrvaška,Alpe Food d.o.o.,3831000001912
+15,BBQ omaka naravno 200 g,1.1,1.47,Italija,VitaMarket Dobavitelj,3831000000502
+16,Bageta maxi 12 x 1 l,0.61,0.87,Slovenija,Okus Narave d.o.o.,3831000003251
+17,Bageta pakirano 750 g,2.53,3.94,Nemčija,Zlato Polje Distribucija,3831000004050
+18,Balzamični kis premium 250 g,6.25,7.86,Španija,Mlečna Pot d.o.o.,3831000004401
+19,Banane bio 150 g,4.35,6.2,Nizozemska,Okus Narave d.o.o.,3831000004715
+20,Banane domače 200 g,3.17,4.61,Nizozemska,Global Food Partner,3831000001813
+21,Banane lahko 1 l,0.74,1.06,Turčija,Jadran Export,3831000002414
+22,Banane maxi 150 g,2.94,3.7,Ekvador,Zlato Polje Distribucija,3831000003817
+23,"Banane mini 1,5 kg",3.29,4.42,Španija,Alpina Delikates,3831000003312
+24,Banane mini 100 g,3.24,4.73,Slovenija,Panvita Dobava,3831000001714
+25,Beli kruh družinsko 500 g,3.85,5.89,Hrvaška,Pekarna Center,3831000001554
+26,Bonboni izbrano 100 g,3.27,5.19,Švica,FreshLine Logistics,3831000003473
+27,Borovnice naravno 1 kg,4.25,5.89,Turčija,Okus Narave d.o.o.,3831000001417
+28,Breskve domače 300 g,1.5,2.23,Ekvador,Global Food Partner,3831000003916
+29,Breskve ekstra 200 g,1.7,2.46,Turčija,Global Food Partner,3831000003015
+30,Breskve sveže 1 kg,1.04,1.26,Španija,Okus Narave d.o.o.,3831000002612
+31,Breskve tradicionalno 300 g,2.61,3.19,Ekvador,Jadran Export,3831000002810
+32,Brokoli klasično 500 g,2.35,3.02,Španija,Alpe Food d.o.o.,3831000003527
+33,Brokoli maxi 2 l,1.8,2.38,Španija,Alpina Delikates,3831000003428
+34,Brokoli mini 1 kg,3.83,5.57,Slovenija,Domača Košara,3831000002926
+35,"Brokoli sveže 1,5 kg",3.14,4.01,Avstrija,Terra Verde,3831000001721
+36,Burek brez glutena 200 g,1.17,1.9,Avstrija,Terra Verde,3831000004753
+37,Burek izbrano 750 g,3.74,4.69,Nemčija,Panvita Dobava,3831000001950
+38,"Burek naravno 1,5 l",3.43,4.58,Hrvaška,Gorenje Gastro Nabava,3831000003855
+39,Bučke lahko 2 kg,2.31,3.09,Madžarska,Okus Narave d.o.o.,3831000004029
+40,Bučke maxi 12 x 1 l,2.64,3.72,Slovenija,AgroFresh Slovenija,3831000001028
+41,Bučno olje klasično 2 l,3.71,5.19,Slovenija,Mlečna Pot d.o.o.,3831000000809
+42,Bučno olje lahko 150 g,3.23,4.55,Avstrija,Mediteran Import,3831000000304
+43,Bučno olje pakirano 2 kg,5.83,8.43,Francija,Global Food Partner,3831000003701
+44,Ciabatta domače 750 g,2.48,3.85,Avstrija,FreshLine Logistics,3831000004159
+45,Cvetača bio 1 kg,1.9,2.99,Nizozemska,Domača Košara,3831000003725
+46,Cvetača pakirano 2 kg,3.73,5,Poljska,Mlečna Pot d.o.o.,3831000002223
+47,"Cvetača premium 1,5 l",0.4,0.57,Poljska,BioIzbor d.o.o.,3831000001622
+48,Drobtine družinsko 500 g,2.66,4.06,Avstrija,Mlečna Pot d.o.o.,3831000001158
+49,Drobtine klasično 750 g,1.81,2.4,Hrvaška,Pekarna Center,3831000002056
+50,"Drobtine mini 1,5 l",0.59,0.87,Avstrija,AgroFresh Slovenija,3831000003756
+51,Energijska pijača bio 150 g,2.18,3.19,Slovenija,Mlečna Pot d.o.o.,3831000001981
+52,Energijska pijača ekstra 1 kg,3.09,3.96,Češka,Sava Trade Foods,3831000001882
+53,Energijska pijača maxi 300 g,3.71,5.17,Češka,Pekarna Center,3831000001189
+54,Feta sir bio 100 g,3.28,4.53,Slovenija,Mlečna Pot d.o.o.,3831000004043
+55,"Feta sir brez glutena 6 x 0,5 l",2.3,3.35,Italija,FreshLine Logistics,3831000001141
+56,"Feta sir ekstra 1,5 l",5.03,7.92,Avstrija,Domača Košara,3831000000847
+57,"Fižol družinsko 1,5 kg",3.35,4.25,Francija,Alpina Delikates,3831000004968
+58,Fižol ekstra 100 g,2.81,3.66,Francija,Jadran Export,3831000004067
+59,Fižol stročji ekstra 500 g,3.28,3.91,Slovenija,Terra Verde,3831000002728
+60,Fižol stročji lahko 300 g,1.96,2.87,Italija,EuroTrade Foods,3831000001820
+61,"Fižol stročji sveže 1,5 kg",1.68,2.11,Slovenija,Domača Košara,3831000000229
+62,Fokača družinsko 100 g,3.2,4.22,Slovenija,Pekarna Center,3831000004456
+63,Fokača mini 400 g,0.3,0.41,Italija,EuroTrade Foods,3831000000953
+64,"Fokača mini 6 x 0,5 l",3.87,4.9,Nemčija,Gorenje Gastro Nabava,3831000001257
+65,Gazirana voda brez glutena 250 g,3.95,4.76,Italija,Pekarna Center,3831000000885
+66,"Gazirana voda družinsko 1,5 kg",2.85,3.9,Češka,VitaMarket Dobavitelj,3831000002582
+67,Gazirana voda ekstra 1 kg,2.99,4.07,Italija,Domača Košara,3831000002186
+68,Gazirana voda ekstra 200 g,1.82,2.98,Hrvaška,Jadran Export,3831000001288
+69,Gazirana voda tradicionalno 300 g,1.83,2.52,Avstrija,Mediteran Import,3831000001585
+70,"Gobe šampinjoni bio 1,5 l",3.45,4.14,Madžarska,BioIzbor d.o.o.,3831000002421
+71,Gorčica klasično 300 g,3.2,4.61,Avstrija,Zlato Polje Distribucija,3831000003404
+72,Goveji zrezki družinsko 1 l,3.43,5.13,Slovenija,Zlato Polje Distribucija,3831000004630
+73,Grah družinsko 400 g,3.67,4.68,Nizozemska,Pekarna Center,3831000000427
+74,Grisini ekstra 1 kg,3.09,4.08,Hrvaška,Gorenje Gastro Nabava,3831000000656
+75,"Grisini klasično 1,5 kg",0.89,1.4,Nemčija,Zlato Polje Distribucija,3831000002254
+76,"Grisini maxi 1,5 kg",3.91,5.05,Avstrija,Zlato Polje Distribucija,3831000000557
+77,Grisini maxi 150 g,1.21,1.81,Nemčija,Pekarna Center,3831000003053
+78,Grozdje družinsko 500 g,1.98,2.41,Kolumbija,Okus Narave d.o.o.,3831000002117
+79,Grozdje izbrano 750 g,3.61,4.39,Španija,Alpina Delikates,3831000002513
+80,Hruške bio 300 g,2.92,3.59,Nizozemska,FreshLine Logistics,3831000003114
+81,Instant kava ekstra 750 g,2.91,3.52,Slovenija,Sava Trade Foods,3831000003282
+82,Instant kava lahko 500 g,4.36,6.21,Italija,Zlato Polje Distribucija,3831000002681
+83,Instant kava maxi 12 x 1 l,0.97,1.28,Slovenija,Terra Verde,3831000000380
+84,"Izvirska voda izbrano 6 x 0,5 l",2.93,4.82,Slovenija,Pekarna Center,3831000004180
+85,Izvirska voda sveže 2 l,3.39,4.99,Slovenija,EuroTrade Foods,3831000002384
+86,Izvirska voda tradicionalno 750 g,3.62,4.75,Nemčija,Terra Verde,3831000003688
+87,Jabolka bio 150 g,4.73,6.94,Italija,Okus Narave d.o.o.,3831000000717
+88,Jabolka lahko 200 g,2.78,3.65,Turčija,Gorenje Gastro Nabava,3831000003619
+89,"Jabolka tradicionalno 6 x 0,5 l",4.37,6.55,Španija,AgroFresh Slovenija,3831000001516
+90,Jabolčni kis maxi 400 g,2.43,3.05,Avstrija,Okus Narave d.o.o.,3831000002803
+91,Jabolčni kis sveže 2 l,8.39,13.74,Francija,Domača Košara,3831000001905
+92,"Jabolčni sok pakirano 6 x 0,5 l",1.44,1.76,Italija,Global Food Partner,3831000002780
+93,"Jagnječji kotleti družinsko 1,5 l",10.67,17.31,Slovenija,Pekarna Center,3831000001639
+94,"Jagnječji kotleti izbrano 1,5 l",3.01,4.91,Madžarska,Terra Verde,3831000003633
+95,"Jagnječji kotleti klasično 1,5 kg",9.12,12.05,Hrvaška,AgroFresh Slovenija,3831000000434
+96,Jagnječji kotleti klasično 300 g,7.19,8.74,Hrvaška,Pekarna Center,3831000003831
+97,Jagnječji kotleti lahko 2 l,5.24,6.67,Avstrija,Global Food Partner,3831000003534
+98,Jagnječji kotleti maxi 250 g,5.88,7.13,Avstrija,EuroTrade Foods,3831000002438
+99,Jagnječji kotleti mini 100 g,10.1,13.9,Italija,Alpe Food d.o.o.,3831000002735
+100,Jagode bio 1 kg,0.55,0.74,Italija,Zlato Polje Distribucija,3831000004012
+101,Jagode brez glutena 12 x 1 l,0.98,1.6,Grčija,Zlato Polje Distribucija,3831000001318
+102,Jogurt lahko 2 l,6.59,9.5,Avstrija,Global Food Partner,3831000003442
+103,Jušna osnova domače 300 g,2.1,3.41,Nemčija,Sava Trade Foods,3831000003862
+104,Jušna osnova izbrano 1 l,1.58,2.01,Madžarska,Mediteran Import,3831000001561
+105,"Kajzerice bio 1,5 l",2.72,4.14,Avstrija,Gorenje Gastro Nabava,3831000004357
+106,"Kajzerice družinsko 1,5 l",3.52,5.01,Slovenija,Global Food Partner,3831000003152
+107,Kajzerice sveže 400 g,3.43,5.17,Nemčija,Alpe Food d.o.o.,3831000004951
+108,"Kakav bio 1,5 kg",4.51,7.33,Švica,Okus Narave d.o.o.,3831000002575
+109,Kakav napitek domače 750 g,1.09,1.68,Hrvaška,Okus Narave d.o.o.,3831000002087
+110,"Kakav napitek premium 1,5 l",2.11,3.48,Nemčija,VitaMarket Dobavitelj,3831000000182
+111,Kamilica čaj brez glutena 250 g,1.86,2.73,Madžarska,Mediteran Import,3831000004982
+112,Kamilica čaj pakirano 150 g,4.28,6.52,Italija,Terra Verde,3831000003381
+113,Kamilica čaj sveže 500 g,3.84,6.17,Češka,Jadran Export,3831000001783
+114,Karamela domače 12 x 1 l,0.54,0.65,Italija,Alpe Food d.o.o.,3831000004975
+115,"Karamela izbrano 6 x 0,5 l",1.75,2.26,Češka,Mlečna Pot d.o.o.,3831000002278
+116,"Karamela lahko 1,5 l",6.43,9.23,Belgija,Panvita Dobava,3831000002476
+117,Karamela tradicionalno 1 kg,6.12,7.61,Avstrija,EuroTrade Foods,3831000000472
+118,Karamela tradicionalno 250 g,0.59,0.92,Belgija,BioIzbor d.o.o.,3831000001479
+119,Kava mleta domače 300 g,0.27,0.39,Italija,Panvita Dobava,3831000001080
+120,Kava mleta družinsko 100 g,3.72,4.47,Avstrija,FreshLine Logistics,3831000000083
+121,"Kava mleta klasično 1,5 kg",1.42,1.95,Češka,Zlato Polje Distribucija,3831000001486
+122,"Kava mleta mini 6 x 0,5 l",2.51,3.29,Hrvaška,Jadran Export,3831000002285
+123,Kefir brez glutena 150 g,2.68,4.35,Italija,Zlato Polje Distribucija,3831000003749
+124,Kefir družinsko 200 g,5.58,6.6,Nizozemska,Zlato Polje Distribucija,3831000000045
+125,Kefir družinsko 500 g,2.38,3.64,Francija,Zlato Polje Distribucija,3831000004548
+126,"Kefir izbrano 1,5 kg",0.99,1.56,Nizozemska,Adria Gastro,3831000004845
+127,Kefir klasično 2 l,5.07,6.73,Nemčija,VitaMarket Dobavitelj,3831000001844
+128,Kefir naravno 1 l,0.96,1.51,Avstrija,Gorenje Gastro Nabava,3831000002049
+129,Kefir tradicionalno 100 g,2.46,3.45,Avstrija,Panvita Dobava,3831000002148
+130,Keksi z maslom ekstra 100 g,3.1,4.33,Avstrija,AgroFresh Slovenija,3831000004777
+131,Keksi z maslom izbrano 12 x 1 l,3.18,4.99,Belgija,Adria Gastro,3831000000977
+132,Keksi z maslom maxi 2 l,0.99,1.3,Belgija,EuroTrade Foods,3831000002377
+133,Keksi z maslom mini 500 g,3.55,5.59,Avstrija,Panvita Dobava,3831000003572
+134,Kečap brez glutena 300 g,8.26,10.02,Francija,Gorenje Gastro Nabava,3831000003909
+135,"Kis brez glutena 6 x 0,5 l",1.37,1.67,Avstrija,Mediteran Import,3831000001806
+136,Kis mini 300 g,4.04,5.19,Italija,Sava Trade Foods,3831000003206
+137,Kis naravno 250 g,5.92,8.29,Grčija,Adria Gastro,3831000001103
+138,Kis pakirano 200 g,7.11,9.11,Avstrija,FreshLine Logistics,3831000002605
+139,Kisla smetana izbrano 150 g,4.61,6.21,Francija,Domača Košara,3831000003947
+140,Kisla smetana izbrano 500 g,2.62,3.62,Nemčija,AgroFresh Slovenija,3831000000946
+141,Kivi klasično 2 kg,2.57,3.68,Španija,Alpina Delikates,3831000004111
+142,Kivi premium 150 g,2.97,3.56,Italija,Gorenje Gastro Nabava,3831000000410
+143,Kokosovo olje maxi 2 l,2.3,3.13,Nemčija,Pekarna Center,3831000002001
+144,Kokosovo olje mini 12 x 1 l,0.84,1.2,Grčija,Alpe Food d.o.o.,3831000003602
+145,"Kokosovo olje mini 6 x 0,5 l",7.62,9.72,Avstrija,Mediteran Import,3831000001301
+146,Kokosovo olje pakirano 400 g,8.24,11.03,Avstrija,Mediteran Import,3831000004302
+147,Kokosovo olje sveže 1 l,7.96,10.67,Avstrija,VitaMarket Dobavitelj,3831000001004
+148,"Kokosovo olje tradicionalno 1,5 kg",2.81,4.16,Grčija,VitaMarket Dobavitelj,3831000001509
+149,"Kola ekstra 1,5 l",1.6,2.48,Italija,EuroTrade Foods,3831000003886
+150,Kola naravno 750 g,1.59,2.21,Madžarska,Okus Narave d.o.o.,3831000000984
+151,Kola premium 400 g,0.31,0.45,Nemčija,Pekarna Center,3831000000281
+152,Korenje bio 1 l,3.3,4.01,Italija,Domača Košara,3831000002124
+153,Korenje družinsko 1 l,2.24,3.27,Španija,Adria Gastro,3831000004227
+154,Koruzna moka domače 750 g,1.67,2.48,Poljska,Global Food Partner,3831000002568
+155,Koruzna moka pakirano 100 g,0.68,0.87,Slovenija,Adria Gastro,3831000002469
+156,Koruzna moka pakirano 150 g,3.22,4.05,Francija,Terra Verde,3831000004166
+157,"Koruzna moka sveže 6 x 0,5 l",5.55,7.92,Avstrija,BioIzbor d.o.o.,3831000002162
+158,Kosmiči premium 1 kg,3.51,4.88,Slovenija,Pekarna Center,3831000003367
+159,Krofi domače 150 g,3.19,4.57,Madžarska,Terra Verde,3831000000151
+160,Krofi izbrano 12 x 1 l,4.07,6.03,Italija,Okus Narave d.o.o.,3831000003558
+161,Krompir bio 150 g,0.81,1.27,Nizozemska,AgroFresh Slovenija,3831000004821
+162,Krompir brez glutena 750 g,3.41,4.95,Madžarska,Gorenje Gastro Nabava,3831000002025
+163,Krompir ekstra 300 g,3.02,4.77,Madžarska,Alpina Delikates,3831000000823
+164,"Krompir maxi 1,5 kg",1.81,2.69,Španija,AgroFresh Slovenija,3831000001424
+165,"Kruh s semeni domače 6 x 0,5 l",2.89,4.75,Nemčija,Adria Gastro,3831000000755
+166,Kruh s semeni izbrano 1 kg,0.45,0.74,Slovenija,AgroFresh Slovenija,3831000000359
+167,Kruh s semeni maxi 12 x 1 l,2.75,4.29,Slovenija,Okus Narave d.o.o.,3831000002452
+168,Kruh s semeni pakirano 300 g,1.24,1.53,Avstrija,Adria Gastro,3831000001059
+169,Kruh s semeni premium 400 g,4.13,5.04,Madžarska,Zlato Polje Distribucija,3831000002155
+170,Kumare izbrano 150 g,2.77,4.04,Italija,Jadran Export,3831000003220
+171,Kus kus bio 2 kg,4.24,5.67,Češka,Pekarna Center,3831000000564
+172,"Kus kus ekstra 6 x 0,5 l",4.09,5.66,Madžarska,Domača Košara,3831000000960
+173,Kus kus lahko 12 x 1 l,4.95,7.55,Slovenija,Mediteran Import,3831000002964
+174,"Kus kus tradicionalno 1,5 l",2.31,3.81,Avstrija,Jadran Export,3831000000168
+175,Kvinoja bio 2 l,2.33,3.54,Francija,Domača Košara,3831000002261
+176,Kvinoja družinsko 2 l,4.73,6.8,Avstrija,Sava Trade Foods,3831000000762
+177,Kvinoja družinsko 250 g,5.12,6.09,Nemčija,Mediteran Import,3831000002360
+178,Kvinoja izbrano 200 g,4.7,6.92,Italija,Mediteran Import,3831000002865
+179,Kvinoja sveže 400 g,3.57,4.74,Poljska,BioIzbor d.o.o.,3831000002766
+180,Lazanja naravno 750 g,6.95,9.5,Nemčija,Mlečna Pot d.o.o.,3831000004296
+181,"Ledeni čaj družinsko 1,5 l",2.7,3.24,Avstrija,Adria Gastro,3831000002889
+182,Ledeni čaj izbrano 300 g,1.81,2.69,Madžarska,AgroFresh Slovenija,3831000003084
+183,Ledeni čaj klasično 400 g,2.52,3.5,Avstrija,Jadran Export,3831000000687
+184,"Ledeni čaj naravno 6 x 0,5 l",1.95,3.05,Madžarska,Pekarna Center,3831000000588
+185,Ledeni čaj pakirano 1 l,4.51,5.42,Češka,Adria Gastro,3831000002483
+186,Limonada brez glutena 750 g,3.77,4.86,Italija,Adria Gastro,3831000000786
+187,"Limonada premium 1,5 kg",0.64,0.88,Nemčija,Alpina Delikates,3831000003787
+188,Limone bio 200 g,4.54,6.38,Italija,Global Food Partner,3831000001110
+189,"Limone maxi 6 x 0,5 l",2.85,3.94,Slovenija,EuroTrade Foods,3831000000519
+190,Lizike domače 1 kg,2.67,3.2,Češka,Pekarna Center,3831000000571
+191,"Lizike pakirano 6 x 0,5 l",5.78,6.91,Italija,FreshLine Logistics,3831000004876
+192,Lizike sveže 1 kg,2.44,3.01,Češka,Jadran Export,3831000001974
+193,Majoneza bio 750 g,8.45,10.24,Slovenija,Pekarna Center,3831000000403
+194,Majoneza ekstra 1 l,2.61,3.41,Nemčija,AgroFresh Slovenija,3831000000106
+195,"Maline klasično 1,5 kg",1.23,2.01,Slovenija,Alpina Delikates,3831000004616
+196,Maline naravno 2 l,1.17,1.46,Grčija,Mlečna Pot d.o.o.,3831000004210
+197,Mandarine brez glutena 1 l,2.26,3.25,Kolumbija,Alpina Delikates,3831000003213
+198,Mandarine mini 750 g,3.26,4.5,Nizozemska,Alpe Food d.o.o.,3831000002216
+199,Mandarine tradicionalno 2 l,3.13,4.34,Grčija,AgroFresh Slovenija,3831000004418
+200,Mango lahko 150 g,0.86,1.06,Španija,EuroTrade Foods,3831000004814
+201,Mango maxi 200 g,3.79,4.77,Italija,Zlato Polje Distribucija,3831000000915
+202,Marcipan družinsko 300 g,6.38,10.03,Belgija,Pekarna Center,3831000001073
+203,Marcipan sveže 400 g,6.49,9.12,Poljska,Adria Gastro,3831000002971
+204,Marmelada domače 1 l,3.49,4.29,Italija,Okus Narave d.o.o.,3831000002773
+205,Marmelada lahko 200 g,4.61,7.34,Češka,Sava Trade Foods,3831000004272
+206,Marmelada mini 1 l,3.02,4.3,Avstrija,Pekarna Center,3831000000274
+207,"Marmelada sveže 6 x 0,5 l",4.97,8.09,Belgija,Terra Verde,3831000003176
+208,Maslo bio 400 g,5.46,7.9,Nizozemska,Mlečna Pot d.o.o.,3831000003145
+209,Maslo naravno 200 g,1,1.35,Slovenija,BioIzbor d.o.o.,3831000004340
+210,"Med klasično 6 x 0,5 l",5.09,7.41,Nemčija,BioIzbor d.o.o.,3831000003978
+211,"Med maxi 1,5 kg",1.76,2.2,Italija,Zlato Polje Distribucija,3831000002070
+212,Med mini 2 l,3.94,5.99,Poljska,EuroTrade Foods,3831000001677
+213,Med tradicionalno 300 g,2.7,4.17,Slovenija,Adria Gastro,3831000002179
+214,Mineralna voda brez glutena 1 kg,1.68,2.71,Slovenija,EuroTrade Foods,3831000003985
+215,"Mineralna voda klasično 1,5 kg",4.41,5.68,Češka,Mediteran Import,3831000003589
+216,Mineralna voda sveže 100 g,5.01,6.19,Madžarska,Sava Trade Foods,3831000003480
+217,Mineralna voda tradicionalno 2 l,0.32,0.46,Češka,Alpe Food d.o.o.,3831000004685
+218,Mleko brez glutena 1 kg,0.87,1.11,Nemčija,Mediteran Import,3831000000441
+219,Mleko ekstra 1 kg,5.77,8.57,Nizozemska,Mediteran Import,3831000002346
+220,Mleko lahko 100 g,2.73,3.31,Francija,Adria Gastro,3831000000649
+221,"Mleto goveje meso mini 1,5 kg",7.33,11.12,Nemčija,VitaMarket Dobavitelj,3831000001332
+222,Mleto goveje meso sveže 150 g,4.95,7.74,Italija,Panvita Dobava,3831000004937
+223,Mlečna čokolada ekstra 2 l,1.99,2.41,Avstrija,Sava Trade Foods,3831000004579
+224,Mlečna čokolada ekstra 400 g,1.12,1.77,Poljska,BioIzbor d.o.o.,3831000004470
+225,Mlečna čokolada klasično 200 g,5.36,8.2,Avstrija,Panvita Dobava,3831000003275
+226,"Mlečna čokolada klasično 6 x 0,5 l",4.57,6.4,Slovenija,Pekarna Center,3831000001172
+227,Mlečna čokolada lahko 2 kg,2.82,4.57,Češka,Sava Trade Foods,3831000003077
+228,"Mlečne štručke bio 1,5 l",2.59,3.86,Slovenija,Gorenje Gastro Nabava,3831000000854
+229,Mlečne štručke bio 750 g,1.18,1.77,Hrvaška,Pekarna Center,3831000001455
+230,Mlečne štručke domače 750 g,0.51,0.7,Madžarska,Sava Trade Foods,3831000002650
+231,Mortadela izbrano 150 g,7.23,9.46,Madžarska,Alpe Food d.o.o.,3831000000830
+232,Mortadela maxi 100 g,6.63,10.59,Madžarska,Adria Gastro,3831000001837
+233,Mozzarella bio 150 g,6.02,9.78,Slovenija,Sava Trade Foods,3831000000243
+234,"Mozzarella domače 6 x 0,5 l",0.72,0.93,Nizozemska,EuroTrade Foods,3831000000748
+235,"Mozzarella družinsko 1,5 l",2.67,4.2,Nizozemska,Zlato Polje Distribucija,3831000004944
+236,Mozzarella izbrano 500 g,6.51,7.89,Italija,FreshLine Logistics,3831000004647
+237,Mozzarella maxi 150 g,2.32,3.64,Slovenija,Panvita Dobava,3831000003640
+238,Multivitaminski sok brez glutena 400 g,2.93,4.39,Madžarska,VitaMarket Dobavitelj,3831000002988
+239,Multivitaminski sok izbrano 300 g,4.33,6.53,Slovenija,Mlečna Pot d.o.o.,3831000004784
+240,Müsli lahko 2 l,5.42,8.76,Nemčija,FreshLine Logistics,3831000000267
+241,Müsli mini 750 g,1.26,1.59,Italija,Zlato Polje Distribucija,3831000001165
+242,Napolitanke klasično 250 g,6.41,8.36,Češka,FreshLine Logistics,3831000000373
+243,"Nektarine ekstra 1,5 l",1.63,1.94,Grčija,Alpe Food d.o.o.,3831000004913
+244,Nektarine izbrano 2 kg,2.66,3.27,Hrvaška,Jadran Export,3831000000212
+245,Nektarine lahko 1 l,0.76,1.2,Slovenija,Gorenje Gastro Nabava,3831000002018
+246,Nektarine mini 2 kg,3.02,4.39,Španija,Domača Košara,3831000002711
+247,Njoki brez glutena 250 g,1.36,1.91,Nemčija,Gorenje Gastro Nabava,3831000001790
+248,Njoki naravno 500 g,4.32,5.81,Španija,AgroFresh Slovenija,3831000004197
+249,"Njoki sveže 1,5 kg",6.71,8.83,Slovenija,Alpe Food d.o.o.,3831000001998
+250,Olivno olje mini 12 x 1 l,8.65,12.46,Slovenija,Jadran Export,3831000002308
+251,Olivno olje mini 300 g,3.07,5.05,Slovenija,Global Food Partner,3831000004807
+252,"Olivno olje naravno 1,5 l",7.87,9.98,Nemčija,FreshLine Logistics,3831000003107
+253,Ovseni kosmiči bio 1 kg,2.58,3.91,Italija,Mediteran Import,3831000003060
+254,Ovseni kosmiči domače 2 l,2.95,3.78,Češka,Panvita Dobava,3831000000366
+255,Paprika brez glutena 300 g,0.85,1.13,Poljska,Domača Košara,3831000004128
+256,Paprika pakirano 300 g,3.62,4.87,Španija,Mediteran Import,3831000001929
+257,Paprika premium 1 kg,2.21,2.86,Hrvaška,BioIzbor d.o.o.,3831000003626
+258,Paradižnik lahko 400 g,1.74,2.57,Italija,FreshLine Logistics,3831000004524
+259,Paradižnik pakirano 300 g,1.3,1.62,Španija,Gorenje Gastro Nabava,3831000003824
+260,Paradižnikova omaka domače 12 x 1 l,7,9.47,Francija,Jadran Export,3831000002506
+261,Paradižnikova omaka naravno 400 g,2.07,2.51,Grčija,FreshLine Logistics,3831000002100
+262,Paradižnikova omaka premium 150 g,6.82,8.77,Italija,Mediteran Import,3831000000700
+263,Paradižnikova omaka premium 300 g,4.66,6.49,Nemčija,VitaMarket Dobavitelj,3831000000205
+264,Parmezan domače 200 g,1.61,2.56,Nizozemska,EuroTrade Foods,3831000003343
+265,Parmezan družinsko 2 l,2.16,3.54,Slovenija,AgroFresh Slovenija,3831000002544
+266,Parmezan sveže 150 g,4.67,6.29,Hrvaška,Gorenje Gastro Nabava,3831000000540
+267,Pašteta družinsko 200 g,11.65,14.16,Slovenija,Mlečna Pot d.o.o.,3831000004838
+268,Pašteta družinsko 500 g,6.68,10.91,Avstrija,FreshLine Logistics,3831000004739
+269,"Pašteta mini 1,5 l",2.92,4.46,Slovenija,AgroFresh Slovenija,3831000001936
+270,Pesto izbrano 300 g,7.11,10.7,Grčija,Adria Gastro,3831000003008
+271,Pesto klasično 250 g,6.29,8.13,Grčija,Zlato Polje Distribucija,3831000002407
+272,Pica testo domače 12 x 1 l,0.52,0.82,Slovenija,Gorenje Gastro Nabava,3831000001851
+273,Pica testo tradicionalno 750 g,3.72,5.04,Avstrija,Okus Narave d.o.o.,3831000000458
+274,Piščančja bedra izbrano 1 l,9.43,14.73,Nemčija,AgroFresh Slovenija,3831000003930
+275,Piščančja bedra izbrano 400 g,6.33,7.67,Nemčija,Adria Gastro,3831000000137
+276,Piščančja bedra klasično 1 l,4.63,7.63,Hrvaška,Pekarna Center,3831000002339
+277,Piščančja bedra klasično 400 g,10.45,12.87,Avstrija,Mlečna Pot d.o.o.,3831000000335
+278,Piščančja bedra naravno 1 l,12,16.89,Avstrija,Global Food Partner,3831000004135
+279,Pleskavice brez glutena 250 g,3.35,4.52,Poljska,FreshLine Logistics,3831000000236
+280,"Polnozrnati kruh družinsko 1,5 l",4.07,5.44,Italija,EuroTrade Foods,3831000003954
+281,Polnozrnati kruh izbrano 2 l,2.68,4.34,Slovenija,Pekarna Center,3831000003350
+282,Pomaranče bio 200 g,1.52,1.89,Italija,Alpina Delikates,3831000000014
+283,Pomaranče brez glutena 750 g,1.06,1.73,Ekvador,Alpina Delikates,3831000001615
+284,Pomaranče izbrano 12 x 1 l,3.76,5,Grčija,BioIzbor d.o.o.,3831000003510
+285,Pomaranče pakirano 750 g,3.77,4.93,Turčija,Mediteran Import,3831000002315
+286,Pomaranče tradicionalno 200 g,1.23,2.01,Hrvaška,Panvita Dobava,3831000000618
+287,Pomarančni sok brez glutena 750 g,1.34,1.64,Madžarska,EuroTrade Foods,3831000004388
+288,Pomfri ekstra 1 l,7.6,9.46,Španija,Mediteran Import,3831000004395
+289,Por ekstra 300 g,2.62,3.61,Hrvaška,Okus Narave d.o.o.,3831000001523
+290,Por mini 12 x 1 l,3.51,4.36,Poljska,VitaMarket Dobavitelj,3831000003121
+291,Por sveže 100 g,2.42,2.91,Hrvaška,Sava Trade Foods,3831000002827
+292,Prepečenec ekstra 200 g,0.86,1.4,Hrvaška,EuroTrade Foods,3831000000052
+293,Proteinska ploščica brez glutena 1 l,1.1,1.73,Nemčija,Mediteran Import,3831000002674
+294,Proteinska ploščica ekstra 400 g,5.02,6.82,Poljska,VitaMarket Dobavitelj,3831000000878
+295,Proteinska ploščica lahko 1 kg,6.33,8.6,Belgija,Domača Košara,3831000000076
+296,Proteinska ploščica lahko 12 x 1 l,2.44,3.51,Poljska,Okus Narave d.o.o.,3831000001370
+297,Proteinska ploščica pakirano 150 g,5.51,7.22,Češka,Pekarna Center,3831000000779
+298,Pršut maxi 150 g,2.8,3.42,Madžarska,EuroTrade Foods,3831000004531
+299,Puding bio 400 g,6.26,8.04,Slovenija,Okus Narave d.o.o.,3831000001646
+300,Puding družinsko 100 g,3.33,4.14,Slovenija,Global Food Partner,3831000003848
+301,Puding lahko 1 l,3.12,4.78,Nemčija,BioIzbor d.o.o.,3831000001042
+302,Puding tradicionalno 300 g,4.51,5.96,Avstrija,Global Food Partner,3831000002742
+303,Puding v prahu družinsko 300 g,2.82,4.43,Belgija,FreshLine Logistics,3831000000670
+304,Puranji file izbrano 1 kg,5.61,8.55,Italija,VitaMarket Dobavitelj,3831000003138
+305,Puranji file naravno 150 g,5.58,6.97,Nemčija,Alpe Food d.o.o.,3831000001738
+306,Puranji file premium 150 g,3.25,5.01,Poljska,Domača Košara,3831000000939
+307,Pšenična moka premium 200 g,1.59,2.43,Nemčija,Okus Narave d.o.o.,3831000003961
+308,Pšenični gris izbrano 300 g,4.26,5.51,Poljska,Terra Verde,3831000004661
+309,Račje prsi bio 100 g,9.58,14.46,Madžarska,Pekarna Center,3831000000038
+310,"Račje prsi družinsko 1,5 l",12.18,16.24,Italija,VitaMarket Dobavitelj,3831000003732
+311,"Račje prsi lahko 1,5 l",6.97,10.04,Poljska,Panvita Dobava,3831000002131
+312,Račje prsi maxi 2 l,3.92,5.44,Madžarska,Panvita Dobava,3831000002537
+313,Račje prsi pakirano 250 g,3.14,5.12,Poljska,Terra Verde,3831000001233
+314,Račje prsi tradicionalno 12 x 1 l,5.14,6.08,Slovenija,Gorenje Gastro Nabava,3831000002834
+315,Redkvice premium 500 g,0.89,1.39,Hrvaška,AgroFresh Slovenija,3831000001127
+316,Repično olje bio 500 g,8.51,10.09,Slovenija,Sava Trade Foods,3831000004609
+317,Repično olje pakirano 2 l,4.55,6.23,Nemčija,Alpina Delikates,3831000004500
+318,Repično olje sveže 2 l,5.18,6.26,Italija,VitaMarket Dobavitelj,3831000004708
+319,"Ribani sir izbrano 1,5 l",1.35,2.02,Slovenija,Terra Verde,3831000002940
+320,Ribani sir pakirano 250 g,5.83,8.68,Nemčija,Mlečna Pot d.o.o.,3831000004449
+321,Ribje palčke ekstra 300 g,3.51,5.44,Hrvaška,Sava Trade Foods,3831000003992
+322,Ribje palčke ekstra 750 g,5.33,6.64,Avstrija,FreshLine Logistics,3831000002193
+323,Riž domače 1 kg,1.3,1.82,Češka,EuroTrade Foods,3831000004760
+324,"Riž domače 1,5 kg",2.91,4.71,Slovenija,VitaMarket Dobavitelj,3831000003169
+325,Riž maxi 1 l,4.63,6.67,Poljska,EuroTrade Foods,3831000001868
+326,Riž maxi 2 kg,1.44,2.2,Madžarska,Terra Verde,3831000001066
+327,Rogljički brez glutena 750 g,2.97,3.73,Italija,Sava Trade Foods,3831000002759
+328,Rogljički ekstra 750 g,2.43,2.88,Avstrija,FreshLine Logistics,3831000004654
+329,Rogljički mini 2 l,0.71,0.85,Slovenija,FreshLine Logistics,3831000001653
+330,Rukola premium 150 g,3.25,5.19,Slovenija,Gorenje Gastro Nabava,3831000002322
+331,Rukola sveže 400 g,1.23,1.98,Nizozemska,VitaMarket Dobavitelj,3831000004623
+332,Rukola tradicionalno 100 g,2.9,3.95,Madžarska,Pekarna Center,3831000000724
+333,"Rženi kruh izbrano 1,5 kg",0.76,1.07,Nemčija,Zlato Polje Distribucija,3831000000250
+334,"Rženi kruh klasično 1,5 l",1.74,2.44,Madžarska,Alpe Food d.o.o.,3831000003657
+335,"Salama premium 1,5 l",11.46,14.55,Slovenija,Gorenje Gastro Nabava,3831000000632
+336,Sezamovo olje tradicionalno 1 l,1.25,1.64,Slovenija,Okus Narave d.o.o.,3831000001707
+337,"Sir brie brez glutena 1,5 kg",3.1,4.06,Avstrija,AgroFresh Slovenija,3831000000342
+338,Sir brie lahko 12 x 1 l,3.02,4.26,Francija,Okus Narave d.o.o.,3831000004142
+339,Sir brie naravno 500 g,4.64,7.39,Hrvaška,Mediteran Import,3831000002247
+340,Sir camembert bio 200 g,4.09,6.29,Avstrija,Sava Trade Foods,3831000001240
+341,Sir camembert maxi 400 g,1.25,1.68,Nemčija,Zlato Polje Distribucija,3831000002445
+342,Sir camembert naravno 150 g,3.6,5.36,Francija,Adria Gastro,3831000003541
+343,Sir edamec maxi 300 g,0.54,0.85,Italija,VitaMarket Dobavitelj,3831000001547
+344,"Sir ementalec naravno 1,5 l",6.51,9.6,Nizozemska,Sava Trade Foods,3831000001448
+345,"Sir gauda naravno 1,5 kg",6.72,9.64,Nizozemska,Zlato Polje Distribucija,3831000001745
+346,Sir gauda naravno 400 g,6.33,8.64,Nizozemska,Adria Gastro,3831000004746
+347,Sirup bezeg domače 200 g,1.61,2.06,Italija,Mlečna Pot d.o.o.,3831000000489
+348,Sirup bezeg mini 2 kg,4.01,6.53,Madžarska,AgroFresh Slovenija,3831000004487
+349,Sirup malina bio 200 g,3.47,5.22,Slovenija,EuroTrade Foods,3831000003183
+350,Skuta mini 12 x 1 l,2.93,4.72,Italija,Mediteran Import,3831000000144
+351,Skuta sveže 200 g,6.37,9.6,Avstrija,EuroTrade Foods,3831000003046
+352,Sladka smetana izbrano 2 l,6.28,10.34,Nizozemska,Mediteran Import,3831000004241
+353,Sladka smetana sveže 12 x 1 l,0.57,0.82,Nemčija,Okus Narave d.o.o.,3831000002643
+354,Sladka smetana tradicionalno 200 g,5.06,7.79,Nemčija,Panvita Dobava,3831000002841
+355,"Sladkor bio 1,5 l",3.97,5.01,Nemčija,Zlato Polje Distribucija,3831000004869
+356,Sladkor domače 200 g,3.68,4.99,Italija,AgroFresh Slovenija,3831000004265
+357,Sladkor klasično 1 kg,1.69,2.5,Italija,Jadran Export,3831000004463
+358,Sladkor premium 1 kg,1.66,2.38,Češka,Okus Narave d.o.o.,3831000001660
+359,Sladkor premium 12 x 1 l,2.24,2.99,Italija,Zlato Polje Distribucija,3831000001264
+360,Sladoled vanilija domače 750 g,5.53,7.52,Poljska,Pekarna Center,3831000001493
+361,Sladoled vanilija ekstra 150 g,3.53,5.73,Avstrija,AgroFresh Slovenija,3831000002698
+362,Sladoled vanilija pakirano 1 kg,7.7,11.53,Slovenija,Pekarna Center,3831000004593
+363,"Sladoled čokolada brez glutena 6 x 0,5 l",8.12,12.85,Slovenija,BioIzbor d.o.o.,3831000001691
+364,Sladoled čokolada mini 150 g,5.69,8.86,Španija,Alpe Food d.o.o.,3831000004890
+365,Slanina bio 2 l,4.28,6.44,Avstrija,FreshLine Logistics,3831000004333
+366,Slanina lahko 1 l,3,4.34,Slovenija,Alpina Delikates,3831000003237
+367,Slive bio 100 g,0.82,1.25,Kolumbija,Alpina Delikates,3831000001011
+368,"Slive družinsko 1,5 kg",1.66,2.2,Turčija,Mlečna Pot d.o.o.,3831000004517
+369,"Slive ekstra 1,5 l",3.74,4.66,Italija,Jadran Export,3831000003718
+370,"Smetanov namaz sveže 1,5 kg",1.45,2.29,Italija,EuroTrade Foods,3831000003244
+371,"Smetanov namaz sveže 1,5 l",3.09,4.14,Nemčija,FreshLine Logistics,3831000001943
+372,"Sojina omaka naravno 1,5 kg",1.35,1.7,Španija,Domača Košara,3831000001202
+373,Sojina omaka sveže 200 g,1.84,2.43,Avstrija,AgroFresh Slovenija,3831000002704
+374,Sojina omaka tradicionalno 12 x 1 l,9.5,12.53,Francija,Adria Gastro,3831000001608
+375,Sol izbrano 200 g,1.31,1.62,Madžarska,EuroTrade Foods,3831000004562
+376,Sol klasično 2 l,4.69,5.7,Poljska,AgroFresh Slovenija,3831000002667
+377,Sol pakirano 250 g,1.91,2.52,Francija,Mediteran Import,3831000001363
+378,Solata bio 12 x 1 l,2.23,3.44,Avstrija,Zlato Polje Distribucija,3831000004920
+379,Solata lahko 12 x 1 l,1.9,2.78,Madžarska,Adria Gastro,3831000001226
+380,Solata tradicionalno 150 g,2.78,4.38,Slovenija,Pekarna Center,3831000000120
+381,Solatni preliv naravno 1 kg,7.76,10.02,Francija,Terra Verde,3831000004203
+382,"Sončnično olje domače 1,5 kg",7.75,12.23,Francija,BioIzbor d.o.o.,3831000005002
+383,Svinjska rebra maxi 2 kg,10.38,14.73,Slovenija,Mlečna Pot d.o.o.,3831000002636
+384,Svinjski kotleti bio 300 g,5.96,9.65,Poljska,Panvita Dobava,3831000000533
+385,Svinjski kotleti mini 250 g,11.39,18.05,Slovenija,Gorenje Gastro Nabava,3831000000731
+386,Svinjski kotleti sveže 200 g,8.84,11.46,Nemčija,Domača Košara,3831000004432
+387,Tartar omaka brez glutena 1 l,3.51,4.74,Grčija,Okus Narave d.o.o.,3831000003503
+388,Tartar omaka domače 750 g,3.52,4.78,Francija,Adria Gastro,3831000002209
+389,Tartar omaka izbrano 1 l,5.07,7.84,Španija,Terra Verde,3831000004906
+390,"Tartar omaka mini 1,5 kg",5.21,6.24,Avstrija,Terra Verde,3831000001400
+391,"Telečji zrezki domače 1,5 kg",2.99,4.71,Slovenija,Jadran Export,3831000002230
+392,"Telečji zrezki izbrano 1,5 l",8.69,11.02,Italija,Gorenje Gastro Nabava,3831000004036
+393,Telečji zrezki premium 2 l,8.45,13.11,Avstrija,Jadran Export,3831000001134
+394,"Temna čokolada klasično 6 x 0,5 l",1.75,2.24,Slovenija,Mediteran Import,3831000003374
+395,Testenine lahko 2 l,2.8,3.38,Francija,FreshLine Logistics,3831000003268
+396,"Testenine naravno 6 x 0,5 l",1.39,1.81,Poljska,Mlečna Pot d.o.o.,3831000000861
+397,Toast pakirano 100 g,1.55,1.89,Italija,BioIzbor d.o.o.,3831000003459
+398,Tonic družinsko 250 g,4.54,7.16,Slovenija,Okus Narave d.o.o.,3831000004289
+399,Tonic naravno 100 g,5.1,6.59,Hrvaška,Pekarna Center,3831000001387
+400,Topljeni sir naravno 12 x 1 l,6.67,8.63,Hrvaška,Mediteran Import,3831000001349
+401,"Tortelini bio 1,5 l",7.35,11.19,Slovenija,Mlečna Pot d.o.o.,3831000004692
+402,Tortelini domače 750 g,6.3,10.3,Nemčija,Jadran Export,3831000004791
+403,Tortelini maxi 2 kg,7.88,12.43,Avstrija,Panvita Dobava,3831000004999
+404,Tortilje bio 100 g,1.68,2.21,Italija,Jadran Export,3831000002858
+405,Tortilje ekstra 2 kg,4.01,5,Nemčija,Okus Narave d.o.o.,3831000002551
+406,"Tortilje sveže 1,5 kg",3.66,4.79,Italija,Adria Gastro,3831000001356
+407,Vaflji ekstra 2 l,5.68,8.63,Belgija,Domača Košara,3831000001875
+408,Worcester omaka domače 150 g,1.85,2.77,Avstrija,Mlečna Pot d.o.o.,3831000000908
+409,Worcester omaka ekstra 2 kg,4.28,6.29,Francija,FreshLine Logistics,3831000002902
+410,Worcester omaka izbrano 400 g,8.56,10.15,Grčija,Global Food Partner,3831000003800
+411,Zamrznjen grah domače 400 g,1.02,1.3,Italija,Global Food Partner,3831000003695
+412,Zamrznjen grah lahko 300 g,6.2,7.68,Španija,Sava Trade Foods,3831000001097
+413,Zamrznjen grah pakirano 2 l,2.27,2.82,Poljska,Gorenje Gastro Nabava,3831000003299
+414,"Zamrznjen kruh družinsko 1,5 l",3.46,4.89,Avstrija,Zlato Polje Distribucija,3831000000991
+415,"Zamrznjen kruh izbrano 6 x 0,5 l",6.08,9.69,Poljska,Domača Košara,3831000002094
+416,"Zamrznjen kruh premium 1,5 kg",3.28,4.24,Slovenija,Zlato Polje Distribucija,3831000004098
+417,Zamrznjen kruh sveže 2 kg,6.08,8.75,Poljska,Okus Narave d.o.o.,3831000003893
+418,Zamrznjen kruh sveže 500 g,7.84,9.9,Španija,Zlato Polje Distribucija,3831000003091
+419,Zamrznjena juha bio 400 g,1.33,1.93,Hrvaška,Jadran Export,3831000000397
+420,Zamrznjena juha naravno 250 g,6.07,7.49,Hrvaška,VitaMarket Dobavitelj,3831000000199
+421,"Zamrznjena juha premium 1,5 kg",2.05,2.79,Italija,Mlečna Pot d.o.o.,3831000000793
+422,Zamrznjena juha tradicionalno 1 l,4.93,7.93,Španija,Zlato Polje Distribucija,3831000001592
+423,Zamrznjena pica družinsko 750 g,1,1.28,Slovenija,Global Food Partner,3831000004494
+424,"Zamrznjena pica mini 6 x 0,5 l",4.04,5.12,Avstrija,Domača Košara,3831000001295
+425,Zamrznjena pica premium 500 g,2.64,4.24,Španija,Adria Gastro,3831000000298
+426,"Zamrznjena pica sveže 6 x 0,5 l",3.74,5.5,Poljska,Domača Košara,3831000003596
+427,Zamrznjena zelenjava izbrano 500 g,6.63,10.78,Italija,Alpe Food d.o.o.,3831000000892
+428,Zamrznjena zelenjava naravno 150 g,7.49,10.18,Nemčija,BioIzbor d.o.o.,3831000000090
+429,Zamrznjena špinača družinsko 250 g,5.7,8.27,Poljska,Mediteran Import,3831000002391
+430,Zamrznjena špinača izbrano 2 kg,5.91,7.76,Poljska,Domača Košara,3831000000694
+431,"Zamrznjena špinača lahko 6 x 0,5 l",2.03,3.25,Italija,Adria Gastro,3831000002896
+432,Zamrznjene jagode bio 100 g,3.93,5.15,Slovenija,VitaMarket Dobavitelj,3831000000595
+433,Zamrznjene jagode maxi 100 g,3.91,5.05,Avstrija,FreshLine Logistics,3831000003497
+434,Zamrznjene jagode naravno 1 kg,3.56,5.13,Slovenija,VitaMarket Dobavitelj,3831000001899
+435,Zamrznjene jagode premium 250 g,6.49,9.18,Nemčija,Alpina Delikates,3831000002599
+436,Zamrznjene maline izbrano 100 g,4.13,5.93,Poljska,Mediteran Import,3831000001196
+437,Zamrznjene maline lahko 12 x 1 l,2.81,4.52,Slovenija,AgroFresh Slovenija,3831000000496
+438,Zamrznjene maline premium 1 l,4.22,5.77,Nemčija,Global Food Partner,3831000002490
+439,Zamrznjeni cmoki klasično 1 kg,1.1,1.48,Slovenija,Domača Košara,3831000003794
+440,Zamrznjeni cmoki klasično 2 kg,7.11,11.07,Italija,VitaMarket Dobavitelj,3831000002292
+441,Zamrznjeni lignji bio 400 g,6.56,9.92,Španija,Global Food Partner,3831000001394
+442,Zamrznjeni rogljički brez glutena 100 g,8.18,10.73,Avstrija,Pekarna Center,3831000002995
+443,Zamrznjeni rogljički izbrano 400 g,2.7,4.3,Poljska,Jadran Export,3831000003398
+444,Zamrznjeni rogljički klasično 150 g,8.22,13.19,Španija,Adria Gastro,3831000002797
+445,Zamrznjeno pecivo pakirano 2 kg,3.98,5.64,Poljska,FreshLine Logistics,3831000003190
+446,Zdrob maxi 300 g,3.6,5.92,Slovenija,Alpina Delikates,3831000000465
+447,Zeleni čaj družinsko 2 kg,4.27,6.46,Italija,Domača Košara,3831000004081
+448,Zeleni čaj lahko 1 l,0.48,0.76,Avstrija,BioIzbor d.o.o.,3831000004586
+449,Zelje ekstra 1 kg,0.63,0.94,Hrvaška,Okus Narave d.o.o.,3831000002520
+450,Zelje lahko 250 g,2.31,2.83,Italija,Okus Narave d.o.o.,3831000001325
+451,Zelje premium 250 g,3.65,5.29,Madžarska,Global Food Partner,3831000000922
+452,Čebula brez glutena 12 x 1 l,2.42,3.46,Madžarska,Alpina Delikates,3831000003923
+453,Čebula družinsko 1 kg,2.14,3.17,Madžarska,AgroFresh Slovenija,3831000004722
+454,Čebula družinsko 2 l,0.46,0.56,Avstrija,Jadran Export,3831000000021
+455,Čebula izbrano 400 g,2.72,4.12,Hrvaška,FreshLine Logistics,3831000002629
+456,"Čebula tradicionalno 1,5 kg",2.29,3.6,Španija,Gorenje Gastro Nabava,3831000000526
+457,Česen domače 1 kg,2.44,3.32,Madžarska,Adria Gastro,3831000004425
+458,Česen družinsko 2 l,1.58,2.45,Madžarska,Domača Košara,3831000000625
+459,"Česen mini 6 x 0,5 l",0.41,0.66,Španija,Okus Narave d.o.o.,3831000004326
+460,Česen premium 2 l,1.61,2.21,Slovenija,EuroTrade Foods,3831000000328
+461,Čevapčiči brez glutena 2 l,7.68,12.03,Avstrija,Okus Narave d.o.o.,3831000003336
+462,Čevapčiči maxi 750 g,5.77,8.01,Hrvaška,Sava Trade Foods,3831000003039
+463,Čevapčiči pakirano 200 g,12.01,17.08,Italija,EuroTrade Foods,3831000004234
+464,"Čevapčiči premium 1,5 l",2.41,3.21,Poljska,Domača Košara,3831000002032
+465,"Čevapčiči sveže 1,5 l",9.33,12.35,Nemčija,BioIzbor d.o.o.,3831000001035
+466,"Čevapčiči sveže 1,5 l - serija 62",3.3,4.49,Hrvaška,Terra Verde,3831000001530
+467,Češnje družinsko 12 x 1 l,1.51,2.12,Ekvador,Mlečna Pot d.o.o.,3831000000311
+468,Češnje ekstra 12 x 1 l,3.53,4.66,Slovenija,BioIzbor d.o.o.,3831000002919
+469,Češnje naravno 12 x 1 l,3.88,6.21,Slovenija,Panvita Dobava,3831000004319
+470,Češnje tradicionalno 300 g,2.36,3.3,Hrvaška,Global Food Partner,3831000001219
+471,Čili omaka brez glutena 1 kg,4.69,7.07,Španija,AgroFresh Slovenija,3831000004005
+472,"Čili omaka maxi 1,5 kg",5.35,7.36,Italija,Terra Verde,3831000004104
+473,"Čili omaka mini 1,5 l",6.88,10.85,Španija,Alpe Food d.o.o.,3831000000601
+474,"Čili omaka tradicionalno 1,5 l",4.78,7.7,Grčija,Global Food Partner,3831000003305
+475,Čičerika bio 2 kg,1.82,2.26,Češka,Jadran Export,3831000001769
+476,Čičerika izbrano 2 kg,0.84,1.24,Nemčija,BioIzbor d.o.o.,3831000002063
+477,Čičerika klasično 300 g,3.31,4.2,Češka,Zlato Polje Distribucija,3831000000663
+478,Čokolada z lešniki klasično 1 l,5.23,7,Švica,Mediteran Import,3831000002872
+479,Čokolada z lešniki maxi 750 g,3.25,5.02,Avstrija,Okus Narave d.o.o.,3831000001776
+480,Čokolada z lešniki tradicionalno 500 g,2.22,3.08,Švica,Mediteran Import,3831000001578
+481,Čokolada z lešniki tradicionalno 500 g - serija 30,1.61,2.56,Češka,VitaMarket Dobavitelj,3831000003671
+482,"Čokoladni namaz domače 1,5 l",6.31,8.31,Češka,Terra Verde,3831000003879
+483,"Čokoladni namaz družinsko 1,5 l",4.09,5.95,Švica,BioIzbor d.o.o.,3831000004074
+484,Čokoladni namaz ekstra 1 kg,0.87,1.41,Češka,BioIzbor d.o.o.,3831000003770
+485,Čokoladni namaz klasično 12 x 1 l,2.09,3.39,Slovenija,Okus Narave d.o.o.,3831000001271
+486,Čokoladni pralineji izbrano 100 g,4.84,6.95,Italija,Mediteran Import,3831000004678
+487,Čokoladni pralineji lahko 1 kg,3.85,5.03,Švica,Alpina Delikates,3831000004173
+488,Čokoladni pralineji premium 500 g,5.64,7.06,Nemčija,Gorenje Gastro Nabava,3831000000175
+489,Črni čaj družinsko 2 l,4.9,6.43,Češka,BioIzbor d.o.o.,3831000001684
+490,Črni čaj klasično 12 x 1 l,0.5,0.66,Avstrija,Gorenje Gastro Nabava,3831000004883
+491,Špageti maxi 1 l,1.32,2,Francija,Zlato Polje Distribucija,3831000003565
+492,Špageti premium 12 x 1 l,4.8,7.12,Poljska,Terra Verde,3831000003664
+493,"Špinača lahko 1,5 kg",2.93,3.76,Slovenija,Alpe Food d.o.o.,3831000003329
+494,Špinača naravno 1 l,3.74,5.83,Hrvaška,Panvita Dobava,3831000003022
+495,Šunka izbrano 200 g,5.69,8.57,Italija,AgroFresh Slovenija,3831000001431
+496,Šunka pakirano 150 g,9.63,14,Avstrija,Jadran Export,3831000002933
+497,Šunka sveže 150 g,5.3,8.02,Poljska,Okus Narave d.o.o.,3831000003435
+498,Žemlje bio 300 g,3.87,5.43,Avstrija,Sava Trade Foods,3831000002353
+499,"Žemlje sveže 1,5 kg",3.06,4.8,Madžarska,Global Food Partner,3831000004258
+500,"Žvečilni gumi lahko 6 x 0,5 l",0.36,0.54,Avstrija,Gorenje Gastro Nabava,3831000004371

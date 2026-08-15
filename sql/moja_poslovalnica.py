@@ -32,7 +32,7 @@ def izmenovodje(vnesen_id_zaposlenega):
             """
 
 
-def sodelavci(vnesen_id_zaposlenega):
+def prodajalci(vnesen_id_zaposlenega):
     '''izpiše ime in priimek sodelavcev poslovalnice, kjer je zaposlen uporabnik'''
 
     sql =   """ SELECT ime, priimek FROM zaposleni 
@@ -40,6 +40,4 @@ def sodelavci(vnesen_id_zaposlenega):
                         AND
                     id_poslovalnice = (SELECT id_poslovalnice FROM zaposleni 
                                         WHERE id_zaposlenega = vnesen_id_zaposlenega)
-                        AND
-                     id_zaposlenega != vnesen_id_zaposlenega
             """

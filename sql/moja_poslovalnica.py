@@ -5,7 +5,7 @@ def moja_poslovalnica(vnesen_id_zaposlenega):
     '''prikaže podatke poslovalnice, kjer je zaposlen uporabnik'''
 
     sql =   """ SELECT poslovalnice.ime, poslovalnice.delovni_cas, poslovalnice.postna_stevilka, poslovalnice.kraj, poslovalnice.naslov, poslovalnice.telefon FROM poslovalnice 
-                    JOIN zaposleni ON zaposleni.id_poslovanice = poslovanice.id_poslovanice
+                    JOIN zaposleni ON zaposleni.id_poslovalnice = poslovalnice.id_poslovalnice
                         WHERE zaposleni.id_zaposlenega = vnesen_id_zaposlenega 
             """
 

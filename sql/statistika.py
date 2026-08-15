@@ -1,6 +1,6 @@
 def poslovalnica_uporabnika(vpisan_id_uporabnika):
   SELECT id_poslovalnice FROM zaposleni
-    WHERE vpisan_id_uporabnika
+    WHERE id_zaposlenega = vpisan_id_uporabnika
 
 poslovalnica = poslovalnica_uporabnika(vpisan_id_uporabnika)
     
@@ -13,21 +13,21 @@ def sestevek_letne_prodaje(poslovalnica, izbrano_leto):
 
 def top10(poslovalnica, izbrano_leto):
   prodaja = f'prodaja{izbrano_leto}'
-  SELECT izdelek FROM prodaja
+  SELECT izdelek, SUM(kolicina) FROM prodaja
     WHERE id_poslovalnice = poslovalnica
       GROUP BY izdelek
         ORDER BY SUM(kolicina) DESC
           LIMIT 10
 
-def najslabsi10(poslovalnica, izbrano_leto):
+def najslabsih10(poslovalnica, izbrano_leto):
   prodaja = f'prodaja{izbrano_leto}'
-  SELECT izdelek FROM prodaja
+  SELECT izdelek, SUM(kolicina) FROM prodaja
     WHERE id_poslovalnice = poslovalnica
       GROUP BY izdelek
         ORDER BY SUM(kolicina) ASC
           LIMIT 10
 
-def mesecna_prodaja_v_izbranem_letu(poslovalnica, izbrano_leto):
+def mesecna_prodaja_v_izbranem_letu(poslovalnica, izbrano_leto):                    TREBA ŠE POPRAVIT
   prodaja = f'prodaja{izbrano_leto}'
   SELECT datum, SUM(prodaja.kolicina * izdelki.prodajna_cena) FROM prodaja
     JOIN izdelki ON izdelki.ime = prodaja.izdelek
@@ -63,10 +63,10 @@ def najslabsi_dan_prodaje(poslovalnica, izbrano_leto):
 
 def stevilo_prodaj(poslovalnica, izbrano_leto):  group by se je potrebno
   prodaja = f'prodaja{izbrano_leto}'
-  SELECT COUNT(id_racuna) FROM prodaja
+  SELECT COUNT(DISTINCT id_racuna) FROM prodaja
     WHERE id_poslovalnice = poslovalnica
 
-def napoved_prodaje(poslovalnica, izbran_izdelek):
+def napoved_prodaje(poslovalnica, izbran_izdelek):                                          DODATI JE ŠE TREBA V KATERI POSLOVALNICI NAJ GLEDA
   WITH leto2024 AS (SELECT SUM(kolicina) AS kolicina2024 FROM prodaja2024
                       WHERE izdelek = izbran_izdelek),
        leto2025 AS (SELECT SUM(kolicina) AS kolicina2025 FROM prodaja2025

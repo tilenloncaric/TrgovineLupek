@@ -26,22 +26,35 @@ sql = SELECT SUM(prodaja.kolicina * izdelki.prodajna_cena) FROM prodaja
       JOIN izdelki ON prodaja.izdelek = izdelki.ime
       WHERE prodaja.id_racuna = stevilka_racuna
 
-
 def prodani_izdelki(stevilka_racuna, leto_izdaje):
     '''vrne seznam prodanih izdelkov in prodano količino posameznega izdelka za izbran račun'''
 
-    tabela = ime_tabele(leto_izdaje)
+    prodaja = ime_tabele(leto_izdaje)
 
-    sql =   SELECT izdelek, kolicina FROM tabela
+    SELECT prodaja.izdelek, prodaja.kolicina, (prodaja.kolicina * izdelki.prodajna_cena) FROM prodaja
+      JOIN izdelki ON prodaja.izdelek = izdelki.ime
         WHERE id_racuna = stevilka_racuna
 
 
 def blagajnik(stevilka_racuna, leto_izdaje):
     '''vrne blagajnika, ki je izdal račun'''
+      prodaja = ime_tabele(leto_izdaje)
+      SELECT id_prodajalca FROM prodaja
+            WHERE id_racuna = stevilka_racuna
+                  GROUP BY id_prodajalca
 
 def datum_izdaje(stevilka_racuna, leto_izdaje):
     '''vrne datum izdaje računa'''
+      prodaja = ime_tabele(leto_izdaje)
+      SELECT datum FROM prodaja
+            WHERE id_racuna = stevilka_racuna
+                  GROUP BY datum
 
 
 def podatki_poslovalnice(stevilka_racuna, leto_izdaje):
      '''vrne podatke o poslovalnici, v kateri je bil izdan račun'''
+       prodaja = ime_tabele(leto_izdaje)
+      SELECT poslovalnice.ime, poslovalnice.delovni_cas, poslovalnice.postna_stevilka, poslovalnice.kraj, poslovalnice.naslov, poslovalnice.telefon FROM poslovalnice
+            JOIN prodaja ON poslovalnice.id_poslovalnice = prodaja.id_poslovalnice
+                  WHERE prodaja.id_racuna = stevilka_racuna
+      

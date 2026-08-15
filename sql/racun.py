@@ -17,10 +17,14 @@ def poslovalnica(stevilka_racuna, leto_izdaje):
                     WHERE tabela_s_podatki.id_poslovalnice = stevilka_racuna    
 
 
-def sestevek_prodaje(stevilka_racuna, leto_izdaje):
+def skupni_sestevek_prodaje(stevilka_racuna, leto_izdaje):
     '''vrne seštevek prodaje za izbran račun'''
 
-    sql = SELECT SUM()
+prodaja = ime_tabele(leto_izdaje)
+
+sql = SELECT SUM(prodaja.kolicina * izdelki.prodajna_cena) FROM prodaja 
+      JOIN izdelki ON prodaja.izdelek = izdelki.ime
+      WHERE prodaja.id_racuna = stevilka_racuna
 
 
 def prodani_izdelki(stevilka_racuna, leto_izdaje):

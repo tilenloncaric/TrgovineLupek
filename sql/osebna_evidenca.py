@@ -12,7 +12,7 @@ def tabela(izbrano_leto):
 def oddelane_ure_v_mesecu(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto):
     '''sešteje oddelane ure zaposlenega v izbranem mesecu in letu'''
 
-    izbran_datum = f'%.{izbran_mesec}.{izbrano_leto}'
+    izbran_datum = f'%{izbran_mesec}.{izbrano_leto}'
     evidenca = tabela(izbrano_leto)
 
     sql =   """ SELECT SUM(strftime('%s', cas_odhoda) - strftime('%s', cas_prihoda)) FROM evidenca
@@ -20,14 +20,15 @@ def oddelane_ure_v_mesecu(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto):
                             AND 
                         id_zaposlenega = vnesen_id_zaposlenega
             """
+    izpisano v sekundah naj pravilno vrača
                             
                             
 def oddelane_ure_za_posamezen_dan(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto):
 
-    izbran_datum = f'%.{izbran_mesec}.{izbrano_leto}'
+    izbran_datum = f'%{izbran_mesec}.{izbrano_leto}'
     evidenca = tabela(izbrano_leto)
 
-    sql =   """ SELECT (strftime('%s', cas_odhoda) - strftime('%s', cas_prihoda)) FROM evidenca
+    sql =   """ SELECT datum, (strftime('%s', cas_odhoda) - strftime('%s', cas_prihoda)) FROM evidenca
                     WHERE datum LIKE izbran_datum
                             AND 
                         id_zaposlenega = vnesen_id_zaposlenega
@@ -36,10 +37,10 @@ def oddelane_ure_za_posamezen_dan(vnesen_id_zaposlenega, izbran_mesec, izbrano_l
 
 def delovna_obveznost_v_mesecu(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto):
 
-    izbran_datum = f'%.{izbran_mesec}.{izbrano_leto}'
+    izbran_datum = f'%{izbran_mesec}.{izbrano_leto}'
     evidenca = tabela(izbrano_leto)
 
-    sql =   """ SELECT SUM(delovna_obveznost) FROM evidenca
+    sql =   """ SELECT SUM(delovna_obveznost) * 3600 FROM evidenca
                     WHERE datum LIKE izbran_datum
                             AND 
                         id_zaposlenega = vnesen_id_zaposlenega
@@ -48,10 +49,10 @@ def delovna_obveznost_v_mesecu(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto
 
 def delovna_obveznost_dan(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto):
 
-    izbran_datum = f'%.{izbran_mesec}.{izbrano_leto}'
+    izbran_datum = f'%{izbran_mesec}.{izbrano_leto}'
     evidenca = tabela(izbrano_leto)
 
-    sql =   """ SELECT delovna_obveznost FROM evidenca
+    sql =   """ SELECT datum, delovna_obveznost FROM evidenca
                     WHERE datum LIKE izbran_datum
                             AND 
                         id_zaposlenega = vnesen_id_zaposlenega

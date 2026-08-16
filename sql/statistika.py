@@ -1,109 +1,138 @@
+import sqlite3
+
+
 def tabela(izbrano_leto):
   return f'prodaja{izbrano_leto}'
 
-def poslovalnica_uporabnika(vpisan_id_uporabnika, pot_do_baze):
-  povezava_na_bazo = sqlite3.connect(pot_do_baze)
-    cursor = povezava_na_bazo.cursor()
 
-  sql = f"""SELECT id_poslovalnice FROM zaposleni
-    WHERE id_zaposlenega = vpisan_id_uporabnika
-"""
-
-cursor.execute(sql, (stevilka_racuna))  
-      rezultat = cursor.fetchone()
-
-      povezava_na_bazo.close()         # zapre povezavo z bazo
-
-      return rezultat
 poslovalnica = poslovalnica_uporabnika(vpisan_id_uporabnika)
-    
-def sestevek_letne_prodaje(poslovalnica, izbrano_leto, pot_do_baze):
+
+
+def poslovalnica_uporabnika(vpisan_id_uporabnika, pot_do_baze):
+  
   povezava_na_bazo = sqlite3.connect(pot_do_baze)
-    cursor = povezava_na_bazo.cursor()
+  cursor = povezava_na_bazo.cursor()
+
+  sql = """ SELECT id_poslovalnice FROM zaposleni
+              WHERE id_zaposlenega = ?
+         """
+  
+  cursor.execute(sql, (vpisan_id_uporabnika))  
+  rezultat = cursor.fetchone()
+  
+  povezava_na_bazo.close()         # zapre povezavo z bazo
+
+  return rezultat
+  
+
+
+def sestevek_letne_prodaje(poslovalnica, izbrano_leto, pot_do_baze):
+  
+  povezava_na_bazo = sqlite3.connect(pot_do_baze)
+  cursor = povezava_na_bazo.cursor()
+  
+  prodaja = tabela(izbrano_leto)
+  
+  sql = f""" SELECT SUM({prodaja}.kolicina * izdelki.prodajna_cena) FROM {prodaja}
+              JOIN izdelki ON izdelki.ime = {prodaja}.izdelek
+               WHERE {prodaja}.id_poslovalnice = ?
+         """
+  
+  cursor.execute(sql, (poslovalnica))  
+  rezultat = cursor.fetchone()
+  
+  povezava_na_bazo.close()         # zapre povezavo z bazo
+  
+  return rezultat
+
+
+
+def top10(poslovalnica, izbrano_leto, pot_do_baze):
+  
+  povezava_na_bazo = sqlite3.connect(pot_do_baze)
+  cursor = povezava_na_bazo.cursor()
 
   prodaja = tabela(izbrano_leto)
   
-  sql = f"""SELECT SUM(prodaja.kolicina * izdelki.prodajna_cena) FROM prodaja
-    JOIN izdelki ON izdelki.ime = prodaja.izdelek
-      WHERE prodaja.id_poslovalnice = poslovalnica
-"""
+  sql = f""" SELECT izdelek, SUM(kolicina) FROM {prodaja}
+              WHERE id_poslovalnice = ?
+               GROUP BY izdelek
+                ORDER BY SUM(kolicina) DESC
+                 LIMIT 10
+         """
+  
+  cursor.execute(sql, (poslovalnica))  
+  rezultat = cursor.fetchall()
+  
+  povezava_na_bazo.close()         # zapre povezavo z bazo
+  
+  return rezultat
 
-cursor.execute(sql, (stevilka_racuna))  
-      rezultat = cursor.fetchone()
 
-      povezava_na_bazo.close()         # zapre povezavo z bazo
-
-      return rezultat
-def top10(poslovalnica, izbrano_leto, pot_do_baze):
-  povezava_na_bazo = sqlite3.connect(pot_do_baze)
-    cursor = povezava_na_bazo.cursor()
-
-  prodaja = tabela(izbrano_leto)
-  sql = f"""SELECT izdelek, SUM(kolicina) FROM prodaja
-    WHERE id_poslovalnice = poslovalnica
-      GROUP BY izdelek
-        ORDER BY SUM(kolicina) DESC
-          LIMIT 10
-"""
-cursor.execute(sql, (stevilka_racuna))  
-      rezultat = cursor.fetchone()
-
-      povezava_na_bazo.close()         # zapre povezavo z bazo
-
-      return rezultat
 
 def najslabsih10(poslovalnica, izbrano_leto, pot_do_baze):
+  
   povezava_na_bazo = sqlite3.connect(pot_do_baze)
-    cursor = povezava_na_bazo.cursor()
+  cursor = povezava_na_bazo.cursor()
 
   prodaja = tabela(izbrano_leto)
-  sql = f"""SELECT izdelek, SUM(kolicina) FROM prodaja
-    WHERE id_poslovalnice = poslovalnica
-      GROUP BY izdelek
-        ORDER BY SUM(kolicina) ASC
-          LIMIT 10
-"""
+  
+  sql = f""" SELECT izdelek, SUM(kolicina) FROM {prodaja}
+              WHERE id_poslovalnice = ?
+               GROUP BY izdelek
+                ORDER BY SUM(kolicina) ASC
+                 LIMIT 10
+         """
+  
+  cursor.execute(sql, (poslovalnica))  
+  rezultat = cursor.fetchall()
+  
+  povezava_na_bazo.close()         # zapre povezavo z bazo
+  return rezultat
 
-cursor.execute(sql, (stevilka_racuna))  
-      rezultat = cursor.fetchone()
 
-      povezava_na_bazo.close()         # zapre povezavo z bazo
 
-      return rezultat
-def mesecna_prodaja_v_izbranem_letu(poslovalnica, izbrano_leto, pot_do_baze):     
-  TREBA ŠE POPRAVIT
-povezava_na_bazo = sqlite3.connect(pot_do_baze)
-    cursor = povezava_na_bazo.cursor()
+def mesecna_prodaja_v_izbranem_letu(poslovalnica, izbrano_leto, pot_do_baze):     TREBA ŠE POPRAVIT
 
-  prodaja = tabela(izbrano_leto)
-  sql = f"""SELECT datum, SUM(prodaja.kolicina * izdelki.prodajna_cena) FROM prodaja
-    JOIN izdelki ON izdelki.ime = prodaja.izdelek
-      WHERE prodaja.id_poslovalnice = poslovalnica
-  """
-
-cursor.execute(sql, (stevilka_racuna))  
-      rezultat = cursor.fetchone()
-
-      povezava_na_bazo.close()         # zapre povezavo z bazo
-
-      return rezultat
-
-def nabavna_cena_v_letu((poslovalnica, izbrano_leto, pot_do_baze):
   povezava_na_bazo = sqlite3.connect(pot_do_baze)
-    cursor = povezava_na_bazo.cursor()
+  cursor = povezava_na_bazo.cursor()
 
   prodaja = tabela(izbrano_leto)
-  sql = f"""SELECT SUM(prodaja.kolicina * izdelki.nabavna_cena) FROM prodaja
-    JOIN izdelki ON izdelki.ime = prodaja.izdelek
-      WHERE prodaja.id_poslovalnice = poslovalnica
-"""
 
-cursor.execute(sql, (stevilka_racuna))  
-      rezultat = cursor.fetchone()
+  sql = f""" SELECT datum, SUM(prodaja.kolicina * izdelki.prodajna_cena) FROM {prodaja}
+              JOIN izdelki ON izdelki.ime = {prodaja}.izdelek
+               WHERE {prodaja}.id_poslovalnice = ?
+         """
 
-      povezava_na_bazo.close()         # zapre povezavo z bazo
+  cursor.execute(sql, (poslovalnica))  
+  rezultat = cursor.fetchall()
 
-      return rezultat
+  povezava_na_bazo.close()         # zapre povezavo z bazo
+
+  return rezultat
+
+
+
+def nabavna_cena_v_letu(poslovalnica, izbrano_leto, pot_do_baze):
+  
+  povezava_na_bazo = sqlite3.connect(pot_do_baze)
+  cursor = povezava_na_bazo.cursor()
+
+  prodaja = tabela(izbrano_leto)
+  
+  sql = f""" SELECT SUM({prodaja}.kolicina * izdelki.nabavna_cena) FROM {prodaja}
+              JOIN izdelki ON izdelki.ime = {prodaja}.izdelek
+               WHERE {prodaja}.id_poslovalnice = poslovalnica
+         """
+  
+  cursor.execute(sql, (poslovalnica))  
+  rezultat = cursor.fetchone()
+  
+  povezava_na_bazo.close()         # zapre povezavo z bazo
+  
+  return rezultat
+
+
 
 def ustvarjen_profit(poslovalnica, izbrano_leto):
   return sestevek_letne_prodaje(poslovalnica, izbrano_leto) - nabavna_cena_v_letu((poslovalnica, izbrano_leto)

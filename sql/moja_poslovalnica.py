@@ -28,7 +28,7 @@ def poslovodja(vnesen_id_zaposlenega, pot_do_baze):
 
     sql =   """ SELECT ime, priimek FROM zaposleni 
                     WHERE delovno_mesto = 'Poslovodja'
-                        AND
+                            AND
                           id_poslovalnice = (SELECT id_poslovalnice FROM zaposleni 
                                                 WHERE id_zaposlenega = ?)
             """
@@ -49,7 +49,7 @@ def izmenovodje(vnesen_id_zaposlenega, pot_do_baze):
 
     sql =   """ SELECT ime, priimek FROM zaposleni 
                     WHERE delovno_mesto = 'Izmenovodja'
-                        AND
+                            AND
                           id_poslovalnice = (SELECT id_poslovalnice FROM zaposleni 
                                                 WHERE id_zaposlenega = ?)
             """
@@ -70,7 +70,7 @@ def prodajalci(vnesen_id_zaposlenega, pot_do_baze):
 
     sql =   """ SELECT ime, priimek FROM zaposleni 
                     WHERE (delovno_mesto = 'Prodajalec' OR delovno_mesto = 'Prodajalka')
-                        AND
+                            AND
                            id_poslovalnice = (SELECT id_poslovalnice FROM zaposleni 
                                                 WHERE id_zaposlenega = ?)
             """

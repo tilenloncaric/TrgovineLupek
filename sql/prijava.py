@@ -15,7 +15,7 @@ def preveri_prijavo(vnesen_id_zaposlenega, vneseno_geslo, pot_do_baze):
 
     
     cursor.execute(sql, (vnesen_id_zaposlenega, vneseno_geslo))
-    rezultat = cursor.fetchone()
+    rezultat = cursor.fetchone()                                    # .fetchone() je samo za eno vrstico
 
     povezava_na_bazo.close()         # zapre povezavo z bazo
 

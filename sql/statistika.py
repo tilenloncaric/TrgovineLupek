@@ -2,12 +2,18 @@ def tabela(izbrano_leto):
   return f'prodaja{izbrano_leto}'
 
 def poslovalnica_uporabnika(vpisan_id_uporabnika):
+  povezava_na_bazo = sqlite3.connect(pot_do_baze)
+    cursor = povezava_na_bazo.cursor()
+
   sql = f"""SELECT id_poslovalnice FROM zaposleni
     WHERE id_zaposlenega = vpisan_id_uporabnika
 """
 poslovalnica = poslovalnica_uporabnika(vpisan_id_uporabnika)
     
 def sestevek_letne_prodaje(poslovalnica, izbrano_leto):
+  povezava_na_bazo = sqlite3.connect(pot_do_baze)
+    cursor = povezava_na_bazo.cursor()
+
   prodaja = tabela(izbrano_leto)
   
   sql = f"""SELECT SUM(prodaja.kolicina * izdelki.prodajna_cena) FROM prodaja
@@ -15,6 +21,9 @@ def sestevek_letne_prodaje(poslovalnica, izbrano_leto):
       WHERE prodaja.id_poslovalnice = poslovalnica
 """
 def top10(poslovalnica, izbrano_leto):
+  povezava_na_bazo = sqlite3.connect(pot_do_baze)
+    cursor = povezava_na_bazo.cursor()
+
   prodaja = tabela(izbrano_leto)
   sql = f"""SELECT izdelek, SUM(kolicina) FROM prodaja
     WHERE id_poslovalnice = poslovalnica
@@ -23,6 +32,9 @@ def top10(poslovalnica, izbrano_leto):
           LIMIT 10
 """
 def najslabsih10(poslovalnica, izbrano_leto):
+  povezava_na_bazo = sqlite3.connect(pot_do_baze)
+    cursor = povezava_na_bazo.cursor()
+
   prodaja = tabela(izbrano_leto)
   sql = f"""SELECT izdelek, SUM(kolicina) FROM prodaja
     WHERE id_poslovalnice = poslovalnica
@@ -30,7 +42,11 @@ def najslabsih10(poslovalnica, izbrano_leto):
         ORDER BY SUM(kolicina) ASC
           LIMIT 10
 """
-def mesecna_prodaja_v_izbranem_letu(poslovalnica, izbrano_leto):                    TREBA ŠE POPRAVIT
+def mesecna_prodaja_v_izbranem_letu(poslovalnica, izbrano_leto):     
+  TREBA ŠE POPRAVIT
+povezava_na_bazo = sqlite3.connect(pot_do_baze)
+    cursor = povezava_na_bazo.cursor()
+
   prodaja = tabela(izbrano_leto)
   sql = f"""SELECT datum, SUM(prodaja.kolicina * izdelki.prodajna_cena) FROM prodaja
     JOIN izdelki ON izdelki.ime = prodaja.izdelek
@@ -38,6 +54,9 @@ def mesecna_prodaja_v_izbranem_letu(poslovalnica, izbrano_leto):                
   """
 
 def nabavna_cena_v_letu((poslovalnica, izbrano_leto):
+  povezava_na_bazo = sqlite3.connect(pot_do_baze)
+    cursor = povezava_na_bazo.cursor()
+
   prodaja = tabela(izbrano_leto)
   sql = f"""SELECT SUM(prodaja.kolicina * izdelki.nabavna_cena) FROM prodaja
     JOIN izdelki ON izdelki.ime = prodaja.izdelek
@@ -47,6 +66,9 @@ def ustvarjen_profit(poslovalnica, izbrano_leto):
   return sestevek_letne_prodaje(poslovalnica, izbrano_leto) - nabavna_cena_v_letu((poslovalnica, izbrano_leto)
 
 def najboljsi_dan_prodaje(poslovalnica, izbrano_leto):
+  povezava_na_bazo = sqlite3.connect(pot_do_baze)
+    cursor = povezava_na_bazo.cursor()
+
   prodaja = tabela(izbrano_leto)
   sql = f"""SELECT datum, SUM(prodaja.kolicina * izdelki.prodajna_cena) AS dnevni_prihodek FROM prodaja
     JOIN izdelki ON izdelki.ime = prodaja.izdelek
@@ -56,6 +78,10 @@ def najboljsi_dan_prodaje(poslovalnica, izbrano_leto):
             LIMIT 1
 """
 def najslabsi_dan_prodaje(poslovalnica, izbrano_leto):
+  
+  povezava_na_bazo = sqlite3.connect(pot_do_baze)
+    cursor = povezava_na_bazo.cursor()
+
   prodaja = tabela(izbrano_leto)
   sql = f"""SELECT datum, SUM(prodaja.kolicina * izdelki.prodajna_cena) AS dnevni_prihodek FROM prodaja
     JOIN izdelki ON izdelki.ime = prodaja.izdelek
@@ -65,11 +91,18 @@ def najslabsi_dan_prodaje(poslovalnica, izbrano_leto):
             LIMIT 1
 """
 def stevilo_prodaj(poslovalnica, izbrano_leto):  group by se je potrebno
+povezava_na_bazo = sqlite3.connect(pot_do_baze)
+    cursor = povezava_na_bazo.cursor()
+
   prodaja = tabela(izbrano_leto)
   sql = f"""SELECT COUNT(DISTINCT id_racuna) FROM prodaja
     WHERE id_poslovalnice = poslovalnica
 """
-def napoved_prodaje(poslovalnica, izbran_izdelek):                                          DODATI JE ŠE TREBA V KATERI POSLOVALNICI NAJ GLEDA
+def napoved_prodaje(poslovalnica, izbran_izdelek):     
+  DODATI JE ŠE TREBA V KATERI POSLOVALNICI NAJ GLEDA
+povezava_na_bazo = sqlite3.connect(pot_do_baze)
+    cursor = povezava_na_bazo.cursor()
+
  sql =f""" WITH leto2024 AS (SELECT SUM(kolicina) AS kolicina2024 FROM prodaja2024
                       WHERE izdelek = izbran_izdelek),
        leto2025 AS (SELECT SUM(kolicina) AS kolicina2025 FROM prodaja2025

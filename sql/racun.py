@@ -7,7 +7,7 @@ def ime_tabele(leto_izdaje):
 
 
 def poslovalnica(stevilka_racuna, leto_izdaje, pot_do_baze):
-    '''vrne poslovalnico, v kateri je bil izdan račun'''
+      '''vrne poslovalnico, v kateri je bil izdan račun'''
       
       povezava_na_bazo = sqlite3.connect(pot_do_baze)
       cursor = povezava_na_bazo.cursor()
@@ -29,7 +29,7 @@ def poslovalnica(stevilka_racuna, leto_izdaje, pot_do_baze):
 
 
 def skupni_sestevek_prodaje(stevilka_racuna, leto_izdaje, pot_do_baze):
-    '''vrne seštevek prodaje za izbran račun'''
+      '''vrne seštevek prodaje za izbran račun'''
       
       povezava_na_bazo = sqlite3.connect(pot_do_baze)
       cursor = povezava_na_bazo.cursor()
@@ -50,16 +50,17 @@ def skupni_sestevek_prodaje(stevilka_racuna, leto_izdaje, pot_do_baze):
 
 
 def prodani_izdelki(stevilka_racuna, leto_izdaje, pot_do_baze):
-    '''vrne seznam prodanih izdelkov, prodano količino in vmesno ceno posameznega izdelka za izbran račun'''
+      '''vrne seznam prodanih izdelkov, prodano količino in vmesno ceno posameznega izdelka za izbran račun'''
 
       povezava_na_bazo = sqlite3.connect(pot_do_baze)
       cursor = povezava_na_bazo.cursor()
 
       prodaja = ime_tabele(leto_izdaje)
 
-      sql = f""" SELECT {prodaja}.izdelek, {prodaja}.kolicina, (prodaja}.kolicina * izdelki.prodajna_cena) FROM {prodaja}
+      sql = f""" SELECT {prodaja}.izdelek, {prodaja}.kolicina, {prodaja}.kolicina * izdelki.prodajna_cena) FROM {prodaja}
                   JOIN izdelki ON {prodaja}.izdelek = izdelki.ime
                    WHERE {prodaja}.id_racuna = ?
+             """
                    
       cursor.execute(sql, (stevilka_racuna,))  # potrebna vejica, da se naredi tuple, sicer ne dela?????
       rezultat = cursor.fetchall()
@@ -70,7 +71,7 @@ def prodani_izdelki(stevilka_racuna, leto_izdaje, pot_do_baze):
       
 
 def blagajnik(stevilka_racuna, leto_izdaje, pot_do_baze):
-    '''vrne ime blagajnika, ki je izdal račun'''
+      '''vrne ime blagajnika, ki je izdal račun'''
     
       povezava_na_bazo = sqlite3.connect(pot_do_baze)
       cursor = povezava_na_bazo.cursor()
@@ -92,35 +93,43 @@ def blagajnik(stevilka_racuna, leto_izdaje, pot_do_baze):
 
     
 def datum_izdaje(stevilka_racuna, leto_izdaje, pot_do_baze):
-    '''vrne datum izdaje računa'''
+      '''vrne datum izdaje računa'''
+      
       povezava_na_bazo = sqlite3.connect(pot_do_baze)
       cursor = povezava_na_bazo.cursor()
+
       prodaja = ime_tabele(leto_izdaje)
-      SELECT datum FROM prodaja
-            WHERE id_racuna = ?
-                  GROUP BY datum
 
-    cursor.execute(sql, (vnesen_id_zaposlenega,))  # potrebna vejica, da se naredi tuple, sicer ne dela?????
-    rezultat = cursor.fetchone()
+      sql = f""" SELECT datum FROM prodaja
+                  WHERE id_racuna = ?
+                   GROUP BY datum
+             """
 
-    povezava_na_bazo.close()         # zapre povezavo z bazo
+      cursor.execute(sql, (stevilka_racuna,))  # potrebna vejica, da se naredi tuple, sicer ne dela?????
+      rezultat = cursor.fetchone()
 
+      povezava_na_bazo.close()         # zapre povezavo z bazo
 
-    return rezultat
-def podatki_poslovalnice(stevilka_racuna, leto_izdaje, pot_do_baze):
-     '''vrne podatke o poslovalnici, v kateri je bil izdan račun'''
-            povezava_na_bazo = sqlite3.connect(pot_do_baze)
-      cursor = povezava_na_bazo.cursor()
-       prodaja = ime_tabele(leto_izdaje)
-      SELECT poslovalnice.ime, poslovalnice.delovni_cas, poslovalnice.postna_stevilka, poslovalnice.kraj, poslovalnice.naslov, poslovalnice.telefon FROM poslovalnice
-            JOIN prodaja ON poslovalnice.id_poslovalnice = prodaja.id_poslovalnice
-                  WHERE prodaja.id_racuna = ?
-                        GROUP BY poslovalnice.ime
+      return rezultat
       
-    cursor.execute(sql, (vnesen_id_zaposlenega,))  # potrebna vejica, da se naredi tuple, sicer ne dela?????
-    rezultat = cursor.fetchone()
+def podatki_poslovalnice(stevilka_racuna, leto_izdaje, pot_do_baze):
+      '''vrne podatke o poslovalnici, v kateri je bil izdan račun'''
+      
+      povezava_na_bazo = sqlite3.connect(pot_do_baze)
+      cursor = povezava_na_bazo.cursor()
 
-    povezava_na_bazo.close()         # zapre povezavo z bazo
+      prodaja = ime_tabele(leto_izdaje)
+
+      sql = f""" SELECT poslovalnice.ime, poslovalnice.delovni_cas, poslovalnice.postna_stevilka, poslovalnice.kraj, poslovalnice.naslov, poslovalnice.telefon FROM poslovalnice
+                  JOIN {prodaja} ON poslovalnice.id_poslovalnice = {prodaja}.id_poslovalnice
+                   WHERE {prodaja}.id_racuna = ?
+                    GROUP BY poslovalnice.ime
+             """
+      
+      cursor.execute(sql, (stevilka_racuna,))  # potrebna vejica, da se naredi tuple, sicer ne dela?????
+      rezultat = cursor.fetchone()
+
+      povezava_na_bazo.close()         # zapre povezavo z bazo
 
 
-    return rezultat
+      return rezultat

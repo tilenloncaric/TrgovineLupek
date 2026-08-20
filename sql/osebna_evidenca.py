@@ -1,29 +1,19 @@
 import sqlite3
 
 
-def tabela(izbrano_leto):
-    '''vrne ime tabele (kot niz), ki vsebuje podatke o evidenci zaposlenega za izbrano leto'''
-    return f'evidenca{izbrano_leto}'
-
-
-def datum(izbran_mesec, izbrano_leto):
-    '''vrne datum (kot niz)'''
-    return f'%{izbran_mesec}.{izbrano_leto}'
-
-
-def oddelane_ure_v_mesecu(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto, pot_do_baze):
+def oddelane_ure_v_mesecu(vnesen_id_zaposlenega, izbran_datum, pot_do_baze):
     '''sešteje oddelane ure zaposlenega v izbranem mesecu in letu'''
 
     povezava_na_bazo = sqlite3.connect(pot_do_baze)
     cursor = povezava_na_bazo.cursor()
 
-    sql =  f""" SELECT SUM(strftime('%s', cas_odhoda) - strftime('%s', cas_prihoda)) FROM {tabela(izbrano_leto)}
+    sql =  """ SELECT SUM(strftime('%s', cas_odhoda) - strftime('%s', cas_prihoda)) FROM evidenca
                     WHERE datum LIKE ?
                             AND 
                         id_zaposlenega = ?
             """
     
-    cursor.execute(sql, (datum(izbran_mesec, izbrano_leto), vnesen_id_zaposlenega)) 
+    cursor.execute(sql, (izbran_datum, vnesen_id_zaposlenega)) 
     rezultat = cursor.fetchone()
 
     povezava_na_bazo.close()         # zapre povezavo z bazo
@@ -31,18 +21,18 @@ def oddelane_ure_v_mesecu(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto, pot
     return rezultat
                             
                             
-def oddelane_ure_za_posamezen_dan(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto, pot_do_baze):
+def oddelane_ure_za_posamezen_dan(vnesen_id_zaposlenega, izbran_datum, pot_do_baze):
     
     povezava_na_bazo = sqlite3.connect(pot_do_baze)
     cursor = povezava_na_bazo.cursor()
 
-    sql =  f""" SELECT datum, (strftime('%s', cas_odhoda) - strftime('%s', cas_prihoda)) FROM {tabela(izbrano_leto)}
+    sql =  f""" SELECT datum, (strftime('%s', cas_odhoda) - strftime('%s', cas_prihoda)) FROM evidenca
                     WHERE datum LIKE ?
                             AND 
                         id_zaposlenega = ?
             """
     
-    cursor.execute(sql, (datum(izbran_mesec, izbrano_leto), vnesen_id_zaposlenega))  # potrebna vejica, da se naredi tuple, sicer ne dela?????
+    cursor.execute(sql, (izbran_datum, vnesen_id_zaposlenega))  # potrebna vejica, da se naredi tuple, sicer ne dela?????
     rezultat = cursor.fetchall()
 
     povezava_na_bazo.close()         # zapre povezavo z bazo
@@ -50,18 +40,18 @@ def oddelane_ure_za_posamezen_dan(vnesen_id_zaposlenega, izbran_mesec, izbrano_l
     return rezultat
     
 
-def delovna_obveznost_v_mesecu(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto, pot_do_baze):
+def delovna_obveznost_v_mesecu(vnesen_id_zaposlenega, izbran_datum, pot_do_baze):
     
     povezava_na_bazo = sqlite3.connect(pot_do_baze)
     cursor = povezava_na_bazo.cursor()
 
-    sql =  f""" SELECT SUM(delovna_obveznost) * 3600 FROM {tabela(izbrano_leto)}
+    sql =  f""" SELECT SUM(delovna_obveznost) * 3600 FROM evidenca
                     WHERE datum LIKE ?
                             AND 
                         id_zaposlenega = ?
             """
     
-    cursor.execute(sql, (datum(izbran_mesec, izbrano_leto), vnesen_id_zaposlenega))  # potrebna vejica, da se naredi tuple, sicer ne dela?????
+    cursor.execute(sql, (izbran_datum, vnesen_id_zaposlenega))  # potrebna vejica, da se naredi tuple, sicer ne dela?????
     rezultat = cursor.fetchone()
 
     povezava_na_bazo.close()         # zapre povezavo z bazo
@@ -69,18 +59,18 @@ def delovna_obveznost_v_mesecu(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto
     return rezultat
     
 
-def delovna_obveznost_dan(vnesen_id_zaposlenega, izbran_mesec, izbrano_leto, pot_do_baze):
+def delovna_obveznost_dan(vnesen_id_zaposlenega, izbran_datum, pot_do_baze):
     
     povezava_na_bazo = sqlite3.connect(pot_do_baze)
     cursor = povezava_na_bazo.cursor()
 
-    sql =  f""" SELECT datum, delovna_obveznost FROM {tabela(izbrano_leto)}
+    sql =  f""" SELECT datum, delovna_obveznost FROM evidenca
                     WHERE datum LIKE ?
                             AND 
                         id_zaposlenega = ?
             """
     
-    cursor.execute(sql, (datum(izbran_mesec, izbrano_leto), vnesen_id_zaposlenega))  # potrebna vejica, da se naredi tuple, sicer ne dela?????
+    cursor.execute(sql, (izbran_datum, vnesen_id_zaposlenega))  # potrebna vejica, da se naredi tuple, sicer ne dela?????
     rezultat = cursor.fetchall()
 
     povezava_na_bazo.close()         # zapre povezavo z bazo

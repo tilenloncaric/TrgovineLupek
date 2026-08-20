@@ -18,28 +18,13 @@ def ustvari_bazo_in_uvozi_podatke():
         # ustvari tabelo z imenom "evidenca2024" z določenimi stolpci in omejitvami
         # stolpec id_zaposlenega v tabeli evidenca2024 mora vsebovati samo številke zaposlenih, ki že obstajajo v tabeli zaposleni
         cursor.execute("""
-        CREATE TABLE evidenca2024 (
+        CREATE TABLE evidenca (
             id INTEGER PRIMARY KEY,
             id_zaposlenega INTEGER NOT NULL,
             datum TEXT NOT NULL,
             cas_prihoda TEXT NOT NULL,
             cas_odhoda TEXT NOT NULL,
             delovna_obveznost INTEGER NOT NULL CHECK (delovna_obveznost > 0),
-
-            FOREIGN KEY (id_zaposlenega)
-                REFERENCES zaposleni(id_zaposlenega)
-        );
-        """)
-
-        # ustvari tabelo z imenom "evidenca2025" z določenimi stolpci in omejitvami
-        cursor.execute("""
-        CREATE TABLE evidenca2025 (
-            id INTEGER PRIMARY KEY,
-            id_zaposlenega INTEGER NOT NULL,
-            datum TEXT NOT NULL,
-            cas_prihoda TEXT NOT NULL,
-            cas_odhoda TEXT NOT NULL,
-            delovna_obveznost INTEGER NOT NULL,
 
             FOREIGN KEY (id_zaposlenega)
                 REFERENCES zaposleni(id_zaposlenega)
@@ -75,29 +60,7 @@ def ustvari_bazo_in_uvozi_podatke():
 
         # ustvari tabelo z imenom "prodaja2024" z določenimi stolpci in omejitvami
         cursor.execute("""
-        CREATE TABLE prodaja2024 (
-            id INTEGER PRIMARY KEY,
-            id_racuna INTEGER NOT NULL,
-            izdelek TEXT NOT NULL,
-            datum TEXT NOT NULL,
-            id_prodajalca INTEGER NOT NULL,
-            id_poslovalnice INTEGER NOT NULL,
-            kolicina INTEGER NOT NULL CHECK (kolicina > 0),
-
-            FOREIGN KEY (izdelek)
-                REFERENCES izdelki(ime),
-
-            FOREIGN KEY (id_prodajalca)
-                REFERENCES zaposleni(id_zaposlenega),
-
-            FOREIGN KEY (id_poslovalnice)
-                REFERENCES poslovalnice(id_poslovalnice)
-        );
-        """)
-
-        # ustvari tabelo z imenom "prodaja2025" z določenimi stolpci in omejitvami
-        cursor.execute("""
-        CREATE TABLE prodaja2025 (
+        CREATE TABLE prodaja (
             id INTEGER PRIMARY KEY,
             id_racuna INTEGER NOT NULL,
             izdelek TEXT NOT NULL,
@@ -136,12 +99,10 @@ def ustvari_bazo_in_uvozi_podatke():
 
 
         # branje CSV datotek, ki se nahajajo v mapi "podatki" znotraj glavne mape projekta
-        evidenca2024 = pd.read_csv(os.path.join(glavna_mapa, "podatki", "evidenca2024.csv"), sep=",", encoding="utf-8")
-        evidenca2025 = pd.read_csv(os.path.join(glavna_mapa, "podatki", "evidenca2025.csv"), sep=",", encoding="utf-8")
+        evidenca = pd.read_csv(os.path.join(glavna_mapa, "podatki", "evidenca.csv"), sep=",", encoding="utf-8")
         izdelki = pd.read_csv(os.path.join(glavna_mapa, "podatki", "izdelki.csv"), sep=",", encoding="utf-8")
         poslovalnice = pd.read_csv(os.path.join(glavna_mapa, "podatki", "poslovalnice.csv"), sep=",", encoding="utf-8")
-        prodaja2024 = pd.read_csv(os.path.join(glavna_mapa, "podatki", "prodaja2024.csv"), sep=",", encoding="utf-8")
-        prodaja2025 = pd.read_csv(os.path.join(glavna_mapa, "podatki", "prodaja2025.csv"), sep=",", encoding="utf-8")
+        prodaja = pd.read_csv(os.path.join(glavna_mapa, "podatki", "prodaja.csv"), sep=",", encoding="utf-8")
         zaposleni = pd.read_csv(os.path.join(glavna_mapa, "podatki", "zaposleni.csv"), sep=",", encoding="utf-8")
 
 
@@ -151,10 +112,8 @@ def ustvari_bazo_in_uvozi_podatke():
         poslovalnice.to_sql("poslovalnice", povezava_na_bazo, if_exists="append", index=False)
         izdelki.to_sql("izdelki", povezava_na_bazo, if_exists="append", index=False)
         zaposleni.to_sql("zaposleni", povezava_na_bazo, if_exists="append", index=False)
-        evidenca2024.to_sql("evidenca2024", povezava_na_bazo, if_exists="append", index=False)
-        evidenca2025.to_sql("evidenca2025", povezava_na_bazo, if_exists="append", index=False)
-        prodaja2024.to_sql("prodaja2024", povezava_na_bazo, if_exists="append", index=False)
-        prodaja2025.to_sql("prodaja2025", povezava_na_bazo, if_exists="append", index=False)
+        evidenca.to_sql("evidenca2024", povezava_na_bazo, if_exists="append", index=False)
+        prodaja.to_sql("prodaja2024", povezava_na_bazo, if_exists="append", index=False)
 
 
         povezava_na_bazo.commit()      # shrani vse spremembe v bazo

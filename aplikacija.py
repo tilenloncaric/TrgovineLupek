@@ -11,216 +11,78 @@ if not os.path.exists(pot_do_baze)):
 
 # prijava uporabnika, preveri če obstaja
 
-# ============================================================
+# =====================================================
 # UVOZ KNJIŽNIC
-# ============================================================
+# =====================================================
 
-# Flask
-# Skrbi za prikaz HTML strani in komunikacijo med
-# brskalnikom in Python programom.
+# Flask skrbi za prikaz HTML strani in obdelavo zahtevkov
 from flask import Flask, render_template, request
 
+# Uvozimo funkcijo za prijavo iz mape sql
+from sql import prijava    # klic funkcije delaš kot prijava.preveri_prijavo()
+from sql import osebni_podatki
+from sql import moja_poslovalnica
+from sql import osebna_evidenca
+from sql import racun
+from sql import sprememba
+from sql import statistika
 
-# ============================================================
-# USTVARJANJE APLIKACIJE
-# ============================================================
 
-# Ustvarimo Flask aplikacijo.
-#
-# Spremenljivka app predstavlja naš spletni strežnik.
-app = Flask(__name__)
+# ustvari flask aplikacijo
+app = Flask(__name__)    
 
 
-# ============================================================
-# ZAČETNA STRAN
-# ============================================================
-
-# Ko uporabnik odpre:
-#
-# http://127.0.0.1:5000
-#
-# Flask pokliče spodnjo funkcijo.
 @app.route("/")
 def prikazi_prijavo():
-
-    # Odpre HTML datoteko:
-    #
-    # templates/login.html
-    #
-    # in jo prikaže uporabniku.
-    return render_template("login.html")
+  '''odpre spletno stran za prijavo uporabnika'''
+  return render_template("prijava.html")
 
 
-# ============================================================
-# PRIJAVA
-# ============================================================
-
-# Ta funkcija se izvede,
-# ko uporabnik klikne gumb "Prijava".
-#
-# methods=["POST"]
-#
-# pomeni:
-# uporabnik pošilja podatke iz obrazca.
 @app.route("/prijava", methods=["POST"])
 def prijava():
+  '''zahteva podatke za prijavo'''
 
-    # ========================================================
-    # PREBERI PODATKE IZ HTML OBRAZCA
-    # ========================================================
+  # zahteva vnos uporanika
+  uporabniska_stevilka = request.form.get("uporabniska_stevilka")
+  geslo = request.form.get("geslo")
 
-    # Preberemo uporabniško številko.
-    #
-    # HTML:
-    #
-    # <input name="uporabnik">
-    #
-    uporabnik = request.form["uporabnik"]
+  # izvede se SQL poizvedba
+  uspesna_prijava = preveri_prijavo(uporabniska_stevilka, geslo)
 
-    # Preberemo geslo.
-    #
-    # HTML:
-    #
-    # <input name="geslo">
-    #
-    geslo = request.form["geslo"]
+  # če je prijava uspešna se odpre začetna stran, sicer se odpre stran, ki javi napako
+  if uspesna_prijava:
+    return render_template("zacetna_stran.html")
+  else:
+    return render_template("napaka_v_prijavi.html")
 
 
-    # ========================================================
-    # SHRANIMO PODATKE
-    # ========================================================
-
-    # Za prvo verzijo aplikacije
-    # prijavne podatke shranimo v slovar.
-    #
-    # Kasneje jih lahko shranimo:
-    # - v session
-    # - v bazo
-    # - v dnevnik prijav
-    #
-    prijavni_podatki = {
-
-        "uporabnik": uporabnik,
-
-        "geslo": geslo
-
-    }
+@app.route("/osebni_podatki")
+def osebni_podatki():
+  return render_template("osebni_podatki.html")
 
 
-    # ========================================================
-    # IZPIS ZA TESTIRANJE
-    # ========================================================
-
-    print("------------------------------------------------")
-    print("PREJETI PRIJAVNI PODATKI")
-    print(prijavni_podatki)
-    print("------------------------------------------------")
+@app.route("/moja_poslovalnica")
+def moja_poslovalnica():
+  return render_template("moja_poslovalnica.html")
 
 
-    # ========================================================
-    # SQL PREVERJANJE
-    # ========================================================
-
-    try:
-
-        # ----------------------------------------------------
-        # ODPIRANJE SQL DATOTEKE
-        # ----------------------------------------------------
-
-        with open(
-            "sql/preveri_prijavo.sql",
-            "r",
-            encoding="utf-8"
-        ) as datoteka:
-
-            sql_poizvedba = datoteka.read()
-
-        print("SQL datoteka uspešno prebrana.")
+@app.route("/osebna_evidenca")
+def osebna_evidenca():
+  return render_template("osebna_evidenca.html")
 
 
-        # ----------------------------------------------------
-        # IZPIS SQL ZA TEST
-        # ----------------------------------------------------
-
-        print("SQL poizvedba:")
-        print(sql_poizvedba)
+@app.route("/izpis_racunov")
+def izpis_racunov():
+  return render_template("izpis_racunov.html")
 
 
-        # ====================================================
-        # TUKAJ BO KASNEJE POVEZAVA Z BAZO
-        # ====================================================
-        #
-        # Trenutno samo simuliramo rezultat.
-        #
-        # Kasneje bo tukaj:
-        #
-        # rezultat = izvedi_sql(...)
-        #
-        rezultat = True
+@app.route("/poslovna_statistika")
+def poslovna_statistika():
+  return render_template("poslovna_statistika.html")
 
-
-        # ====================================================
-        # USPEŠNA PRIJAVA
-        # ====================================================
-
-        if rezultat:
-
-            print("Prijava uspešna.")
-
-            # Kasneje bova tukaj odprla
-            # naslednjo HTML stran.
-            #
-            # Trenutno samo vrnemo besedilo.
-            return "PRIJAVA USPEŠNA"
-
-
-        # ====================================================
-        # NEUSPEŠNA PRIJAVA
-        # ====================================================
-
-        else:
-
-            print(
-                "Uporabnik ni bil najden "
-                "ali nima pravic za dostop."
-            )
-
-            # Odpri HTML stran z napako.
-            return render_template(
-                "napaka_prijava.html"
-            )
-
-
-    # ========================================================
-    # NAPAKA PRI SQL IZVEDBI
-    # ========================================================
-
-    except Exception as napaka:
-
-        print("NAPAKA PRI IZVEDBI SQL POIZVEDBE")
-        print(napaka)
-
-        # Prikažemo stran z napako.
-        return render_template(
-            "napaka_prijava.html"
-        )
-
-
-# ============================================================
-# ZAGON APLIKACIJE
-# ============================================================
-
-# Ta del se izvede samo,
-# če zaženemo datoteko main.py.
+# zagon strežnika
 if __name__ == "__main__":
-
-    # debug=True
-    #
-    # prednosti:
-    # - samodejni ponovni zagon ob spremembi kode
-    # - podrobni izpisi napak
-    #
-    app.run(debug=True)
+  app.run(debug=True)
 
 # začetna stran, ki pove dobrodošli v trgovine lupek, potem so zgoaj zavihtki na katere lahko uporabnik stisne
 

@@ -1,0 +1,178 @@
+let
+    Source =
+        SapBusinessWarehouse.Cubes(
+            "sapcivbwp.sap.gorenje.si",
+            "07",
+            "400",
+            [Implementation = "2.0"]
+        ),
+
+    ZCOPA_K1 =
+        Source{[Name = "ZCOPA_K1"]}[Data],
+
+    CPA_FABRIC =
+        ZCOPA_K1{[Id = "ZCOPA_K1/ZCOPA_K1_FABRIC"]}[Data],
+
+    #"Select Columns" =
+        Cube.Transform(
+            CPA_FABRIC,
+            {
+                // Measures
+                {Cube.AddMeasureColumn, "Sales quantity", "[Measures].[00O2TOE4V43TW2EM7LCNOI3F7]"},
+                {Cube.AddMeasureColumn, "Net sales revenues (FNPC)", "[Measures].[00O2TOE4V43TW2EM7LCNOI9QR]"},
+                {Cube.AddMeasureColumn, "Net sales revenues (FPC)", "[Measures].[00O2TOE4V43TW2EM7LCNOIG2B]"},
+                {Cube.AddMeasureColumn, "Gross sales", "[Measures].[00O2TOE4V43TW2EM7LCNOIMDV]"},
+
+                // Time
+                {
+                    Cube.AddAndExpandDimensionColumn,
+                    "[0CALMONTH]",
+                    {"[0CALMONTH].[LEVEL01]"},
+                    {"Cal. year / month Level 01"}
+                },
+
+                // Sales attributes
+                {
+                    Cube.AddAndExpandDimensionColumn,
+                    "[Z_CH_DIR]",
+                    {"[Z_CH_DIR].[LEVEL01]"},
+                    {"China direct sales Level 01"}
+                },
+
+                {
+                    Cube.AddAndExpandDimensionColumn,
+                    "[Z_IN_OUT]",
+                    {"[Z_IN_OUT].[LEVEL01]"},
+                    {"Z_IN_OUT Level 01"}
+                },
+
+                // Country hierarchy
+                {
+                    Cube.AddAndExpandDimensionColumn,
+                    "[0COUNTRY]",
+                    {
+                        "[0COUNTRY                      Z_GFK_SHARE].[LEVEL00]",
+                        "[0COUNTRY                      Z_GFK_SHARE].[LEVEL01]",
+                        "[0COUNTRY                      Z_GFK_SHARE].[LEVEL02]",
+                        "[0COUNTRY                      Z_GFK_SHARE].[LEVEL03]"
+                    },
+                    {
+                        "Country Level 01",
+                        "Country Level 02",
+                        "Country Level 03",
+                        "Country Level 04"
+                    }
+                },
+
+                // Currency / unit
+                {
+                    Cube.AddAndExpandDimensionColumn,
+                    "[1CUDIM]",
+                    {"[1CUDIM].[LEVEL01]"},
+                    {"Currency/Unit Level 01"}
+                },
+
+                // GFK
+                {
+                    Cube.AddAndExpandDimensionColumn,
+                    "[0MATERIAL__Z_GFK2]",
+                    {"[0MATERIAL__Z_GFK2             GFK].[LEVEL01]"},
+                    {"GFK Level 01"}
+                },
+
+                // Version
+                {
+                    Cube.AddAndExpandDimensionColumn,
+                    "[0VERSION]",
+                    {"[0VERSION].[LEVEL01]"},
+                    {"Version Level 01"}
+                },
+
+                // Country keys
+                {
+                    Table.AddColumn,
+                    "Country Level 01.Key",
+                    each Cube.AttributeMemberProperty([Country Level 01], "[20COUNTRY]")
+                },
+
+                {
+                    Table.AddColumn,
+                    "Country Level 02.Key",
+                    each Cube.AttributeMemberProperty([Country Level 02], "[20COUNTRY]")
+                },
+
+                {
+                    Table.AddColumn,
+                    "Country Level 03.Key",
+                    each Cube.AttributeMemberProperty([Country Level 03], "[20COUNTRY]")
+                },
+
+                {
+                    Table.AddColumn,
+                    "Country Level 04.Key",
+                    each Cube.AttributeMemberProperty([Country Level 04], "[20COUNTRY]")
+                },
+
+                // Country names
+                {
+                    Table.AddColumn,
+                    "Country Level 01.Name",
+                    each Cube.AttributeMemberProperty([Country Level 01], "[10COUNTRY]")
+                },
+
+                {
+                    Table.AddColumn,
+                    "Country Level 02.Name",
+                    each Cube.AttributeMemberProperty([Country Level 02], "[10COUNTRY]")
+                },
+
+                {
+                    Table.AddColumn,
+                    "Country Level 03.Name",
+                    each Cube.AttributeMemberProperty([Country Level 03], "[10COUNTRY]")
+                },
+
+                {
+                    Table.AddColumn,
+                    "Country Level 04.Name",
+                    each Cube.AttributeMemberProperty([Country Level 04], "[10COUNTRY]")
+                }
+            }
+        ),
+
+    #"Renamed Columns" =
+        Table.RenameColumns(
+            #"Select Columns",
+            {
+                {"Sales quantity", "SalesQuantity"},
+                {"Net sales revenues (FNPC)", "NetSalesRevenuesFnpc"},
+                {"Net sales revenues (FPC)", "NetSalesRevenuesFpc"},
+                {"Gross sales", "GrossSales"},
+
+                {"Cal. year / month Level 01", "MonthYear"},
+                {"China direct sales Level 01", "ChinaDirectSales"},
+
+                {"Country Level 01", "CountryL1"},
+                {"Country Level 02", "CountryL2"},
+                {"Country Level 03", "CountryL3"},
+                {"Country Level 04", "CountryL4"},
+
+                {"Currency/Unit Level 01", "CurrencyUnit"},
+                {"GFK Level 01", "GfkL2"},
+                {"Version Level 01", "Version"},
+                {"Z_IN_OUT Level 01", "SalesInOut"},
+ 
+                {"Country Level 01.Key", "CountryKeyL1"},
+                {"Country Level 02.Key", "CountryKeyL2"},
+                {"Country Level 03.Key", "CountryKeyL3"},
+                {"Country Level 04.Key", "CountryKeyL4"}
+            }
+        ),
+
+#"Removed Columns" =
+        Table.RemoveColumns(#"Renamed Columns", {"CountryKeyL1", "CountryKeyL2", "Country Level 01.Name", "Country Level 02.Name", "Country Level 03.Name", "Country Level 04.Name"}),
+
+#"Reordered columns" = 
+        Table.ReorderColumns(#"Removed Columns", {"SalesQuantity", "NetSalesRevenuesFnpc", "NetSalesRevenuesFpc", "GrossSales", "MonthYear", "ChinaDirectSales", "SalesInOut", "CountryL1", "CountryL2", "CountryL3", "CountryL4", "CurrencyUnit", "GfkL2", "Version", "CountryKeyL3", "CountryKeyL4"})
+in
+    #"Reordered columns"

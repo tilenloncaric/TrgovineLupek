@@ -12,7 +12,7 @@ def moja_poslovalnica(vnesen_id_zaposlenega, pot_do_baze):
                         WHERE zaposleni.id_zaposlenega = ? 
             """
 
-    cursor.execute(sql, (vnesen_id_zaposlenega))
+    cursor.execute(sql, (vnesen_id_zaposlenega,))
     rezultat = cursor.fetchone()
 
     povezava_na_bazo.close()         # zapre povezavo z bazo
@@ -33,7 +33,7 @@ def poslovodja(vnesen_id_zaposlenega, pot_do_baze):
                                                 WHERE id_zaposlenega = ?)
             """
 
-    cursor.execute(sql, (vnesen_id_zaposlenega))
+    cursor.execute(sql, (vnesen_id_zaposlenega,))
     rezultat = cursor.fetchone()
 
     povezava_na_bazo.close()         # zapre povezavo z bazo
@@ -54,7 +54,7 @@ def izmenovodje(vnesen_id_zaposlenega, pot_do_baze):
                                                 WHERE id_zaposlenega = ?)
             """
    
-    cursor.execute(sql, (vnesen_id_zaposlenega))
+    cursor.execute(sql, (vnesen_id_zaposlenega,))
     rezultat = cursor.fetchall()                          # .fetchall() je za več vrstic
 
     povezava_na_bazo.close()         # zapre povezavo z bazo
@@ -75,7 +75,7 @@ def prodajalci(vnesen_id_zaposlenega, pot_do_baze):
                                                 WHERE id_zaposlenega = ?)
             """
     
-    cursor.execute(sql, (vnesen_id_zaposlenega))
+    cursor.execute(sql, (vnesen_id_zaposlenega,))
     rezultat = cursor.fetchall()
 
     povezava_na_bazo.close()         # zapre povezavo z bazo

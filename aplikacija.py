@@ -11,30 +11,40 @@ if not os.path.exists(pot_do_baze)):
 
 # prijava uporabnika, preveri če obstaja
 
-# Uvozimo Flask knjižnico.
-# Flask skrbi za prikaz HTML strani in komunikacijo med brskalnikom in Pythonom.
+# ============================================================
+# UVOZ KNJIŽNIC
+# ============================================================
+
+# Flask
+# Skrbi za prikaz HTML strani in komunikacijo med
+# brskalnikom in Python programom.
 from flask import Flask, render_template, request
 
 
+# ============================================================
+# USTVARJANJE APLIKACIJE
+# ============================================================
+
 # Ustvarimo Flask aplikacijo.
+#
 # Spremenljivka app predstavlja naš spletni strežnik.
 app = Flask(__name__)
 
 
 # ============================================================
-# PRVI KORAK
-# Prikažemo prijavno stran.
+# ZAČETNA STRAN
 # ============================================================
 
 # Ko uporabnik odpre:
 #
 # http://127.0.0.1:5000
 #
-# Flask izvede spodnjo funkcijo.
+# Flask pokliče spodnjo funkcijo.
 @app.route("/")
 def prikazi_prijavo():
 
-    # Poišče datoteko:
+    # Odpre HTML datoteko:
+    #
     # templates/login.html
     #
     # in jo prikaže uporabniku.
@@ -42,49 +52,51 @@ def prikazi_prijavo():
 
 
 # ============================================================
-# DRUGI KORAK
-# Obdelava prijave.
+# PRIJAVA
 # ============================================================
 
-# Ta funkcija se izvede, ko uporabnik klikne:
-#
-# "Prijava"
+# Ta funkcija se izvede,
+# ko uporabnik klikne gumb "Prijava".
 #
 # methods=["POST"]
 #
 # pomeni:
-# uporabnik pošilja podatke Python programu.
+# uporabnik pošilja podatke iz obrazca.
 @app.route("/prijava", methods=["POST"])
 def prijava():
 
-    # --------------------------------------------------------
+    # ========================================================
     # PREBERI PODATKE IZ HTML OBRAZCA
-    # --------------------------------------------------------
+    # ========================================================
 
-    # Preberemo vrednost iz polja:
+    # Preberemo uporabniško številko.
+    #
+    # HTML:
     #
     # <input name="uporabnik">
     #
     uporabnik = request.form["uporabnik"]
 
-    # Preberemo vrednost iz polja:
+    # Preberemo geslo.
+    #
+    # HTML:
     #
     # <input name="geslo">
     #
     geslo = request.form["geslo"]
 
 
-    # --------------------------------------------------------
+    # ========================================================
     # SHRANIMO PODATKE
-    # --------------------------------------------------------
+    # ========================================================
 
-    # Za prvo verzijo aplikacije ju shranimo
-    # v običajen Python slovar.
+    # Za prvo verzijo aplikacije
+    # prijavne podatke shranimo v slovar.
     #
     # Kasneje jih lahko shranimo:
     # - v session
     # - v bazo
-    # - v uporabniški profil
+    # - v dnevnik prijav
     #
     prijavni_podatki = {
 
@@ -95,27 +107,25 @@ def prijava():
     }
 
 
-    # Izpis v terminal.
-    #
-    # To je koristno za testiranje.
-    #
-    # Primer:
-    #
-    # {
-    #   'uporabnik': '12345',
-    #   'geslo': 'abcdef'
-    # }
-    #
+    # ========================================================
+    # IZPIS ZA TESTIRANJE
+    # ========================================================
+
+    print("------------------------------------------------")
+    print("PREJETI PRIJAVNI PODATKI")
     print(prijavni_podatki)
+    print("------------------------------------------------")
 
 
-    # --------------------------------------------------------
-    # POSKUSI IZVESTI SQL PREVERJANJE
-    # --------------------------------------------------------
+    # ========================================================
+    # SQL PREVERJANJE
+    # ========================================================
 
     try:
 
-        # Odpri SQL datoteko.
+        # ----------------------------------------------------
+        # ODPIRANJE SQL DATOTEKE
+        # ----------------------------------------------------
 
         with open(
             "sql/preveri_prijavo.sql",
@@ -123,77 +133,92 @@ def prijava():
             encoding="utf-8"
         ) as datoteka:
 
-            # Preberi celotno SQL poizvedbo.
-
             sql_poizvedba = datoteka.read()
 
+        print("SQL datoteka uspešno prebrana.")
+
 
         # ----------------------------------------------------
-        # TUKAJ BO KASNEJE POVEZAVA Z BAZO
+        # IZPIS SQL ZA TEST
         # ----------------------------------------------------
+
+        print("SQL poizvedba:")
+        print(sql_poizvedba)
+
+
+        # ====================================================
+        # TUKAJ BO KASNEJE POVEZAVA Z BAZO
+        # ====================================================
         #
-        # Trenutno baze še nimamo.
+        # Trenutno samo simuliramo rezultat.
         #
-        # Zato samo simuliramo uspešen rezultat.
+        # Kasneje bo tukaj:
+        #
+        # rezultat = izvedi_sql(...)
         #
         rezultat = True
 
 
-        # ----------------------------------------------------
-        # ČE JE PRIJAVA USPEŠNA
-        # ----------------------------------------------------
+        # ====================================================
+        # USPEŠNA PRIJAVA
+        # ====================================================
 
         if rezultat:
 
-            # Kasneje bomo tukaj odprli
+            print("Prijava uspešna.")
+
+            # Kasneje bova tukaj odprla
             # naslednjo HTML stran.
             #
-            # Zaenkrat samo vrnemo besedilo.
-            #
+            # Trenutno samo vrnemo besedilo.
             return "PRIJAVA USPEŠNA"
 
 
-        # ----------------------------------------------------
-        # ČE PRIJAVA NI USPEŠNA
-        # ----------------------------------------------------
+        # ====================================================
+        # NEUSPEŠNA PRIJAVA
+        # ====================================================
 
         else:
 
-            return "NAPAČNO UPORABNIŠKO IME ALI GESLO"
+            print(
+                "Uporabnik ni bil najden "
+                "ali nima pravic za dostop."
+            )
+
+            # Odpri HTML stran z napako.
+            return render_template(
+                "napaka_prijava.html"
+            )
 
 
-    # --------------------------------------------------------
-    # ČE PRIDE DO NAPAKE
-    # --------------------------------------------------------
+    # ========================================================
+    # NAPAKA PRI SQL IZVEDBI
+    # ========================================================
 
     except Exception as napaka:
 
-        # Izpišemo opis napake.
-        #
-        # Primer:
-        #
-        # SQL datoteka ne obstaja
-        # Baza ni dosegljiva
-        # Napaka v SQL stavku
-        #
-        return f"NAPAKA: {napaka}"
+        print("NAPAKA PRI IZVEDBI SQL POIZVEDBE")
+        print(napaka)
+
+        # Prikažemo stran z napako.
+        return render_template(
+            "napaka_prijava.html"
+        )
 
 
 # ============================================================
-# ZAGON PROGRAMA
+# ZAGON APLIKACIJE
 # ============================================================
 
 # Ta del se izvede samo,
-# če zaženemo main.py.
-
+# če zaženemo datoteko main.py.
 if __name__ == "__main__":
 
     # debug=True
     #
-    # pomeni:
-    #
-    # - ob spremembi kode se program sam ponovno zažene
-    # - v primeru napake vidimo podroben opis
+    # prednosti:
+    # - samodejni ponovni zagon ob spremembi kode
+    # - podrobni izpisi napak
     #
     app.run(debug=True)
 

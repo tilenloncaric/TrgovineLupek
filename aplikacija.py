@@ -16,7 +16,7 @@ if not os.path.exists(pot_do_baze)):
 # =====================================================
 
 # Flask skrbi za prikaz HTML strani in obdelavo zahtevkov
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 
 # Uvozimo funkcijo za prijavo iz mape sql
 from sql import prijava    # klic funkcije delaš kot prijava.preveri_prijavo()
@@ -47,18 +47,20 @@ def prijava():
   geslo = request.form.get("geslo")
 
   # izvede se SQL poizvedba
-  uspesna_prijava = preveri_prijavo(uporabniska_stevilka, geslo)
+  sql_preveri_prijavo = prijava.preveri_prijavo(uporabniska_stevilka, geslo)
 
   # če je prijava uspešna se odpre začetna stran, sicer se odpre stran, ki javi napako
-  if uspesna_prijava:
+  if sql_preveri_prijavo:
+    session["uporabniska_stevilka"] = uporabniska_stevilka   # da je vnesena uporabniška številka vidna vsem uporabnikom
     return render_template("zacetna_stran.html")
-  else:
-    return render_template("napaka_v_prijavi.html")
+  return render_template("napaka_v_prijavi.html")
 
 
 @app.route("/osebni_podatki")
 def osebni_podatki():
-  return render_template("osebni_podatki.html")
+  uporabniska_stevilka = session.get(session.get()
+  ime, priimek, spol, delovno_mesto, poslovalnica = osebni_podatki.osebni_podatki(uporabniska_stevilka)
+  return render_template("osebni_podatki.html", ime=ime, priimek=priimek, delovno_mesto=delovno_mesto, poslovalnice=poslovalnica)
 
 
 @app.route("/moja_poslovalnica")

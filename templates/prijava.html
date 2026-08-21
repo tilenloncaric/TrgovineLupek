@@ -2,52 +2,51 @@
 
 <!-- vsebina je v slovenščini -->
 <html lang="sl">
+
     
 <head>
+    
+    <!-- kodiranje UTF-8, za izpis šumnikov -->
     <meta charset="UTF-8">
+    
+    <!-- naslov, ki se prikazuje v zavihku brskalnika -->
     <title>Osebni portal Trgovine Lupek</title>
+    
 </head>
+
     
 <body>
-
+    
+    <!-- glavni naslov strani -->
     <h1>Osebni portal Trgovine Lupek</h1>
+    
+    <!-- podnaslov z navodili za uporabnika -->
+    <h2>Vnesi svoje podatke za prijavo!</h2>
 
-    <h2>Vnesi svoje podatke za prijavo</h2>
-
-    <form action="/prijava" method="    <label for="uporabnik">
-                Uporabniška številka
-            </label>
+    <form action="/prijava" method="    
+        
+        <label for="uporabnik">Uporabniška številka: </label>
             <br>
-            <input
-                type="text"
-                id="uporabnik"
-                name="uporabnik"
-                required
-            >
-        </div>
+            <input type="text" id="uporabnik" name="uporabniska_stevilka" required>
+    </div>
 
         <br>
 
         <div>
-            <label for="geslo">
-                Geslo
-            </label>
+            
+            <label for="geslo">Geslo: </label>
             <br>
-            <input
-                type="password"
-                id="geslo"
-                name="geslo"
-                required
-            >
+            <input type="password" id="geslo" name="geslo" required>
         </div>
 
         <br>
-
-        <button type="submit">
-            Prijava
-        </button>
+        
+        <!-- gumb za prijavo oz. za pošiljanje vnosnih polj -->
+        <button type="submit">Prijava!</button>
 
     </form>
 
+    
 </body>
+    
 </html>

@@ -1,4 +1,12 @@
 import os
+from sql import prijava    # klic funkcije delaš kot prijava.preveri_prijavo()
+from sql import osebni_podatki
+from sql import moja_poslovalnica
+from sql import osebna_evidenca
+from sql import racun
+from sql import sprememba
+from sql import statistika
+from flask import Flask, render_template, request, session
 
 # poglej če baza že obstaja, če ne jo ustvari sicer ne neradi nič
 glavna_mapa = os.path.dirname(os.path.abspath(__file__))     # mapa, kjer se nahaja trenutna .py datoteka
@@ -8,24 +16,6 @@ pot_do_baze = os.path.join(trenutna_mapa, "baza", "baza.db"
 # če baza že obstaja, ne ustvarja nove baze in ne uvaža podatkov
 if not os.path.exists(pot_do_baze)):
   ustvari_bazo_in_uvozi_podatke(pot_do_baze)
-
-# prijava uporabnika, preveri če obstaja
-
-# =====================================================
-# UVOZ KNJIŽNIC
-# =====================================================
-
-# Flask skrbi za prikaz HTML strani in obdelavo zahtevkov
-from flask import Flask, render_template, request, session
-
-# Uvozimo funkcijo za prijavo iz mape sql
-from sql import prijava    # klic funkcije delaš kot prijava.preveri_prijavo()
-from sql import osebni_podatki
-from sql import moja_poslovalnica
-from sql import osebna_evidenca
-from sql import racun
-from sql import sprememba
-from sql import statistika
 
 
 # ustvari flask aplikacijo
@@ -58,18 +48,20 @@ def prijava():
 
 @app.route("/osebni_podatki")
 def osebni_podatki():
-  uporabniska_stevilka = session.get(session.get()
+  uporabniska_stevilka = session.get(session.get())
   ime, priimek, spol, delovno_mesto, poslovalnica = osebni_podatki.osebni_podatki(uporabniska_stevilka)
   return render_template("osebni_podatki.html", ime=ime, priimek=priimek, delovno_mesto=delovno_mesto, poslovalnice=poslovalnica)
 
 
 @app.route("/moja_poslovalnica")
 def moja_poslovalnica():
+  uporabniska_stevilka = session.get(session.get())
   return render_template("moja_poslovalnica.html")
 
 
 @app.route("/osebna_evidenca")
 def osebna_evidenca():
+  uporabniska_stevilka = session.get(session.get())
   return render_template("osebna_evidenca.html")
 
 

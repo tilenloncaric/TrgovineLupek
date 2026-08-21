@@ -1,77 +1,66 @@
 <!DOCTYPE html>
 <html lang="sl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osebni portal Trgovine Lupke</title>
+    <title>Trgovine Lupek</title>
 </head>
-
 <body>
 
-    <h1>
-        Dobrodošli v osebnem portalu Trgovine Lupke
-    </h1>
-
-    <hr>
+    <h1>Trgovine Lupek</h1>
 
     <nav>
-
-        <a href="#">
-            Osebni podatki
-        </a>
-
-        |
-
-        <a href="#">
-            Moja poslovalnica
-        </a>
-
-        |
-
-        <a href="#">
-            Osebna evidenca
-        </a>
-
-        |
-
-        <a href="#">
-            Račun
-        </a>
-
-        |
-
-        <a href="#">
-            Statistika
-        </a>
-
+        <button onclick="showTab('osebni')">Osebni podatki</button>
+        <button onclick="showTab('poslovalnica')">Moja poslovalnica</button>
+        <button onclick="showTab('evidenca')">Osebna evidenca</button>
+        <button onclick="showTab('racuni')">Izpis računov</button>
+        <button onclick="showTab('statistika')">Poslovna statistika</button>
     </nav>
 
     <hr>
 
-    <h2>
-        Izberite želeni zavihek.
-    </h2>
+    <!-- Začetna stran -->
+    <div id="home">
+        <h2>Dobrodošli v osebnem portalu Trgovine Lupek</h2>
+    </div>
 
-    <p>
+    <div id="osebni" class="tab" style="display:none;">
+        <h2>Osebni podatki</h2>
+    </div>
 
-        Tukaj se bo kasneje prikazovala vsebina
-        izbranega zavihka.
+    <div id="poslovalnica" class="tab" style="display:none;">
+        <h2>Moja poslovalnica</h2>
+    </div>
 
-    </p>
+    <div id="evidenca" class="tab" style="display:none;">
+        <h2>Osebna evidenca</h2>
+    </div>
 
-    <br>
-    <br>
-    <br>
+    <div id="racuni" class="tab" style="display:none;">
+        <h2>Izpis računov</h2>
+    </div>
 
-    /odjava
+    <div id="statistika" class="tab" style="display:none;">
+        <h2>Poslovna statistika</h2>
+    </div>
 
-        <button type="submit">
-            Odjava
-        </button>
+    <script>
+        function showTab(tabId) {
 
-    </form>
+            // Skrij začetno stran
+            document.getElementById("home").style.display = "none";
+
+            // Skrij vse zavihke
+            const tabs = document.getElementsByClassName("tab");
+
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+
+            // Prikaži izbran zavihek
+            document.getElementById(tabId).style.display = "block";
+        }
+    </script>
 
 </body>
-
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trgovine Lupek</title>
+</head>
+<body>
+
+    <h1>Trgovine Lupek</h1>
+
+    <nav>
+        <button onclick="showTab('osebni')">Osebni podatki</button>
+        <button onclick="showTab('poslovalnica')">Moja poslovalnica</button>
+        <button onclick="showTab('evidenca')">Osebna evidenca</button>
+        <button onclick="showTab('racuni')">Izpis računov</button>
+        <button onclick="showTab('statistika')">Poslovna statistika</button>
+    </nav>
+
+    <hr>
+
+    <div id="osebni" class="tab">
+        <h2>Osebni podatki</h2>
+    </div>
+
+    <div id="poslovalnica" class="tab" style="display:none;">
+        <h2>Moja poslovalnica</h2>
+    </div>
+
+    <div id="evidenca" class="tab" style="display:none;">
+        <h2>Osebna evidenca</h2>
+    </div>
+
+    <div id="racuni" class="tab" style="display:none;">
+        <h2>Izpis računov</h2>
+    </div>
+
+    <div id="statistika" class="tab" style="display:none;">
+        <h2>Poslovna statistika</h2>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.getElementsByClassName("tab");
+
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+
+            document.getElementById(tabId).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trgovine Lupek</title>
+</head>
+<body>
+
+    <h1>Trgovine Lupek</h1>
+
+    <nav>
+        <button onclick="showTab('osebni')">Osebni podatki</button>
+        <button onclick="showTab('poslovalnica')">Moja poslovalnica</button>
+        <button onclick="showTab('evidenca')">Osebna evidenca</button>
+        <button onclick="showTab('racuni')">Izpis računov</button>
+        <button onclick="showTab('statistika')">Poslovna statistika</button>
+    </nav>
+
+    <hr>
+
+    <!-- OSEBNI PODATKI -->
+    <div id="osebni" class="tab">
+        <h2>Osebni podatki</h2>
+    </div>
+
+    <!-- MOJA POSLOVALNICA -->
+    <div id="poslovalnica" class="tab" style="display:none;">
+
+        <h2>Moja poslovalnica</h2>
+
+        <button onclick="showBusinessSection('podatkiPoslovalnice')">
+            Podatki o poslovalnici
+        </button>
+
+        <button onclick="showBusinessSection('sodelavci')">
+            Sodelavci
+        </button>
+
+        <hr>
+
+        <!-- PODATKI O POSLOVALNICI -->
+        <div id="podatkiPoslovalnice"
+             class="businessSection"
+             style="display:none;">
+
+            <h3>Podatki o poslovalnici</h3>
+
+            <p>Poslovalnica</p>
+            <p>Delovni čas</p>
+            <p>Naslov</p>
+            <p>Telefon</p>
+
+        </div>
+
+        <!-- SODELAVCI -->
+        <div id="sodelavci"
+             class="businessSection"
+             style="display:none;">
+
+            <h3>Sodelavci</h3>
+
+            <p>Poslovodja</p>
+            <p>Izmenovodja</p>
+            <p>Prodajalci</p>
+
+        </div>
+
+    </div>
+
+    <!-- OSEBNA EVIDENCA -->
+    <div id="evidenca" class="tab" style="display:none;">
+        <h2>Osebna evidenca</h2>
+    </div>
+
+    <!-- IZPIS RAČUNOV -->
+    <div id="racuni" class="tab" style="display:none;">
+        <h2>Izpis računov</h2>
+    </div>
+
+    <!-- POSLOVNA STATISTIKA -->
+    <div id="statistika" class="tab" style="display:none;">
+        <h2>Poslovna statistika</h2>
+    </div>
+
+    <script>
+
+        function showTab(tabId) {
+
+            const tabs = document.getElementsByClassName("tab");
+
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+
+            document.getElementById(tabId).style.display = "block";
+        }
+
+        function showBusinessSection(sectionId) {
+
+            const sections = document.getElementsByClassName("businessSection");
+
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+            }
+
+            document.getElementById(sectionId).style.display = "block";
+        }
+
+    </script>
+
+</body>
+</html>
+``

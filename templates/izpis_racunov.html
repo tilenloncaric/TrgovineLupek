@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trgovine Lupek</title>
+</head>
+<body>
+
+    <h1>Trgovine Lupek</h1>
+
+    <nav>
+        <button type="button" onclick="showTab('osebni')">
+            Osebni podatki
+        </button>
+
+        <button type="button" onclick="showTab('poslovalnica')">
+            Moja poslovalnica
+        </button>
+
+        <button type="button" onclick="showTab('evidenca')">
+            Osebna evidenca
+        </button>
+
+        <button type="button" onclick="showTab('racuni')">
+            Izpis računov
+        </button>
+
+        <button type="button" onclick="showTab('statistika')">
+            Poslovna statistika
+        </button>
+    </nav>
+
+    <hr>
+
+    <!-- OSEBNI PODATKI -->
+    <div id="osebni" class="tab">
+
+        <h2>Osebni podatki</h2>
+
+    </div>
+
+    <!-- MOJA POSLOVALNICA -->
+    <div id="poslovalnica" class="tab" style="display:none;">
+
+        <h2>Moja poslovalnica</h2>
+
+    </div>
+
+    <!-- OSEBNA EVIDENCA -->
+    <div id="evidenca" class="tab" style="display:none;">
+
+        <h2>Osebna evidenca</h2>
+
+    </div>
+
+    <!-- IZPIS RAČUNOV -->
+    <div id="racuni" class="tab" style="display:none;">
+
+        <h2>Izpis računov</h2>
+
+        <form method="POST" action="{{ url_for('racuni') }}cun_leto">
+                Izberi leto:
+            </label>
+
+            <select
+                id="racun_leto"
+                name="racun_leto"
+                required
+            >
+
+                <option value="">
+                    -- Izberi leto --
+                </option>
+
+                {% for leto in leta_racuni %}
+
+                    <option
+                        value="{{ leto }}"
+                    >
+                        {{ leto }}
+                    </option>
+
+                {% endfor %}
+
+            </select>
+
+            <br><br>
+
+            <label for="racun_mesec">
+                Izberi mesec:
+            </label>
+
+            <select
+                id="racun_mesec"
+                name="racun_mesec"
+                required
+            >
+
+                <option value="">
+                    -- Izberi mesec --
+                </option>
+
+                {% for mesec in meseci_racuni %}
+
+                    <option
+                        value="{{ mesec.vrednost }}"
+                    >
+                        {{ mesec.naziv }}
+                    </option>
+
+                {% endfor %}
+
+            </select>
+
+            <br><br>
+
+            <label for="stevilka_racuna">
+                Izberi račun:
+            </label>
+
+            <select
+                id="stevilka_racuna"
+                name="stevilka_racuna"
+                required
+            >
+
+                <option value="">
+                    -- Izberi račun --
+                </option>
+
+                {% for racun in seznam_racunov %}
+
+                    <option
+                        value="{{ racun.stevilka }}"
+                    >
+                        {{ racun.stevilka }}
+                    </option>
+
+                {% endfor %}
+
+            </select>
+
+            <br><br>
+
+            <button type="submit">
+                Prikaži račun
+            </button>
+
+        </form>
+
+        {% if podatki_racuna %}
+
+            <hr>
+
+            <p>
+                <b>Številka računa:</b>
+                {{ podatki_racuna.stevilka }}
+            </p>
+
+            <p>
+                <b>Datum izdaje:</b>
+                {{ podatki_racuna.datum_izdaje }}
+            </p>
+
+            <p>
+                <b>Blagajnik:</b>
+                {{ podatki_racuna.blagajnik }}
+            </p>
+
+            <p>
+                <b>Vsota:</b>
+                {{ podatki_racuna.vsota }}
+            </p>
+
+            <hr>
+
+            <h3>Kupljeni izdelki</h3>
+
+            <table border="1">
+
+                <tr>
+                    <th>Šifra</th>
+                    <th>Izdelek</th>
+                    <th>Količina</th>
+                    <th>Cena</th>
+                    <th>Skupaj</th>
+                </tr>
+
+                {% for izdelek in izdelki %}
+
+                    <tr>
+
+                        <td>
+                            {{ izdelek.sifra }}
+                        </td>
+
+                        <td>
+                            {{ izdelek.naziv }}
+                        </td>
+
+                        <td>
+                            {{ izdelek.kolicina }}
+                        </td>
+
+                        <td>
+                            {{ izdelek.cena }}
+                        </td>
+
+                        <td>
+                            {{ izdelek.skupaj }}
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+            </table>
+
+        {% endif %}
+
+    </div>
+
+    <!-- POSLOVNA STATISTIKA -->
+    <div id="statistika" class="tab" style="display:none;">
+
+        <h2>Poslovna statistika</h2>
+
+    </div>
+
+    <script>
+
+        function showTab(tabId) {
+
+            const tabs =
+                document.getElementsByClassName("tab");
+
+            for (let i = 0; i < tabs.length; i++) {
+
+                tabs[i].style.display = "none";
+
+            }
+
+            document
+                .getElementById(tabId)
+                .style.display = "block";
+
+        }
+
+    </script>
+
+</body>
+</html>

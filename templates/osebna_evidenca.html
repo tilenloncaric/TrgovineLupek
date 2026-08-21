@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trgovine Lupek</title>
+</head>
+<body>
+
+    <h1>Trgovine Lupek</h1>
+
+    <nav>
+        <button type="button" onclick="showTab('osebni')">
+            Osebni podatki
+        </button>
+
+        <button type="button" onclick="showTab('poslovalnica')">
+            Moja poslovalnica
+        </button>
+
+        <button type="button" onclick="showTab('evidenca')">
+            Osebna evidenca
+        </button>
+
+        <button type="button" onclick="showTab('racuni')">
+            Izpis računov
+        </button>
+
+        <button type="button" onclick="showTab('statistika')">
+            Poslovna statistika
+        </button>
+    </nav>
+
+    <hr>
+
+    <!-- OSEBNI PODATKI -->
+    <div id="osebni" class="tab">
+
+        <h2>Osebni podatki</h2>
+
+    </div>
+
+    <!-- MOJA POSLOVALNICA -->
+    <div id="poslovalnica" class="tab" style="display:none;">
+
+        <h2>Moja poslovalnica</h2>
+
+    </div>
+
+    <!-- OSEBNA EVIDENCA -->
+    <div id="evidenca" class="tab" style="display:none;">
+
+        <h2>Osebna evidenca</h2>
+
+        <!--
+            Obrazec pošlje izbrano leto in mesec
+            v Python funkcijo osebna_evidenca.
+        -->
+        {{ url_for('osebna_evidenca') }}
+
+            <!-- IZBIRA LETA -->
+            <label for="leto">
+                Izberi leto:
+            </label>
+
+            <select
+                id="leto"
+                name="leto"
+                required
+            >
+
+                <option value="">
+                    -- Izberi leto --
+                </option>
+
+                <!--
+                    Spremenljivko leta pripravi SQL-poizvedba
+                    in jo Flask pošlje v HTML.
+                -->
+                {% for leto in leta %}
+
+                    <option
+                        value="{{ leto }}"
+
+                        {% if izbrano_leto|string == leto|string %}
+                            selected
+                        {% endif %}
+                    >
+                        {{ leto }}
+                    </option>
+
+                {% endfor %}
+
+            </select>
+
+            <br><br>
+
+            <!-- IZBIRA MESECA -->
+            <label for="mesec">
+                Izberi mesec:
+            </label>
+
+            <select
+                id="mesec"
+                name="mesec"
+                required
+            >
+
+                <option value="">
+                    -- Izberi mesec --
+                </option>
+
+                <!--
+                    Vsak mesec mora imeti:
+
+                    mesec.vrednost = številka meseca
+                    mesec.naziv = ime meseca
+
+                    Primer:
+                    {
+                        "vrednost": 1,
+                        "naziv": "Januar"
+                    }
+                -->
+                {% for mesec in meseci %}
+
+                    <option
+                        value="{{ mesec.vrednost }}"
+
+                        {% if izbrani_mesec|string == mesec.vrednost|string %}
+                            selected
+                        {% endif %}
+                    >
+                        {{ mesec.naziv }}
+                    </option>
+
+                {% endfor %}
+
+            </select>
+
+            <br><br>
+
+            <!--
+                Ko uporabnik izbere leto in mesec,
+                se obrazec pošlje v Python.
+            -->
+            <button type="submit">
+                Prikaži evidenco
+            </button>
+
+        </form>
+
+        <!--
+            Tabela se prikaže samo takrat,
+            ko Python vrne podatke v spremenljivki evidenca.
+        -->
+        {% if evidenca %}
+
+            <hr>
+
+            <h3>
+                Evidenca za
+                {{ izbrani_mesec_naziv }}
+                {{ izbrano_leto }}
+            </h3>
+
+            <table border="1">
+
+                <thead>
+
+                    <tr>
+                        <th>Datum</th>
+                        <th>Prihod</th>
+                        <th>Odhod</th>
+                        <th>Število ur</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <!--
+                        Za vsako vrstico, ki jo vrne SQL-poizvedba,
+                        se ustvari nova vrstica HTML-tabele.
+                    -->
+                    {% for vrstica in evidenca %}
+
+                        <tr>
+
+                            <td>
+                                {{ vrstica.datum }}
+                            </td>
+
+                            <td>
+                                {{ vrstica.prihod }}
+                            </td>
+
+                            <td>
+                                {{ vrstica.odhod }}
+                            </td>
+
+                            <td>
+                                {{ vrstica.stevilo_ur }}
+                            </td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        <!--
+            Če je bila evidenca iskana,
+            vendar SQL ni vrnil nobene vrstice.
+        -->
+        {% elif evidenca_iskana %}
+
+            <p>
+                Za izbrano leto in mesec ni podatkov.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+    <!-- IZPIS RAČUNOV -->
+    <div id="racuni" class="tab" style="display:none;">
+
+        <h2>Izpis računov</h2>
+
+    </div>
+
+    <!-- POSLOVNA STATISTIKA -->
+    <div id="statistika" class="tab" style="display:none;">
+
+        <h2>Poslovna statistika</h2>
+
+    </div>
+
+    <script>
+
+        /*
+            Funkcija najprej skrije vse zavihke,
+            nato pa pokaže samo izbrani zavihek.
+        */
+        function showTab(tabId) {
+
+            const tabs =
+                document.getElementsByClassName("tab");
+
+            for (let i = 0; i < tabs.length; i++) {
+
+                tabs[i].style.display = "none";
+
+            }
+
+            document.getElementById(tabId).style.display = "block";
+
+        }
+
+
+        /*
+            Ko Python po izbiri leta in meseca ponovno
+            naloži HTML-stran, se mora ponovno prikazati
+            zavihek Osebna evidenca.
+
+            Python zato pošlje:
+
+            aktivni_zavihek = "evidenca"
+        */
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const aktivniZavihek =
+                    "{{ aktivni_zavihek|default('osebni') }}";
+
+                showTab(aktivniZavihek);
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>

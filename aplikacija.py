@@ -1,5 +1,6 @@
 import os
 from baza import uvoz
+from flask import Flask, render_template, request, session
 from sql import prijava    # klic funkcije delaš kot prijava.preveri_prijavo()
 from sql import osebni_podatki
 from sql import moja_poslovalnica
@@ -7,7 +8,6 @@ from sql import osebna_evidenca
 from sql import racun
 from sql import sprememba
 from sql import statistika
-from flask import Flask, render_template, request, session
 
 
 # ustvarjanje baze
@@ -61,26 +61,41 @@ def stran_osebni_podatki():
 
 
 
-@app.route("/moja_poslovalnica")
-def stran_moja_poslovalnica():
-  ''''''
-  uporabniska_stevilka = session.get("uporabniska_stevilka")
-  return render_template("moja_poslovalnica.html")
+@app.route("/moja_poslovalnica", methods=["GET", "POST"])
+def moja_poslovalnica():
+
+    uporabniska_stevilka = session.get("uporabniska_stevilka")
+
+    if request.method == "POST":
+        klik_na_gumb = request.form.get("klik_na_gumb")
+
+        if klik_na_gumb == "podatki_poslovalnice":
+            poslovalnica, delovni_cas, naslov, telefon = moja_poslovalnica.moja_poslovalnica(uporabniska_stevilka, pot_do_baze)
+            return render_template("moja_poslovalnica.html", poslovalnica=poslovalnica, delovni_cas=delovni_cas, naslov=naslov, telefon=telefon)
+
+        elif klik_na_gumb == "sodelavci":
+            poslovodja = moja_poslovalnica.poslovodja(uporabniska_stevilka, pot_do_baze)
+            izmenovodje = moja_poslovalnica.izmenovodje(uporabniska_stevilka, pot_do_baze)
+            prodajalci = moja_poslovalnica.prodajalci(uporabniska_stevilka, pot_do_baze)
+            return render_template("moja_poslovalnica.html", poslovodja=poslovodja, izmenovodje=izmenovodje, prodajalci=prodajalci)
+
+    return render_template("moja_poslovalnica.html")
+
 
 
 @app.route("/osebna_evidenca")
-def osebna_evidenca():
+def stran_osebna_evidenca():
   uporabniska_stevilka = session.get(session.get())
   return render_template("osebna_evidenca.html")
 
 
 @app.route("/izpis_racunov")
-def izpis_racunov():
+def stran_izpis_racunov():
   return render_template("izpis_racunov.html")
 
 
 @app.route("/poslovna_statistika")
-def poslovna_statistika():
+def stran_poslovna_statistika():
   return render_template("poslovna_statistika.html")
 
 # zagon strežnika

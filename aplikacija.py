@@ -91,6 +91,12 @@ def stran_osebna_evidenca():
 
 @app.route("/izpis_racunov")
 def stran_izpis_racunov():
+  poslovalnica = racun.poslovalnica(stevilka_racuna, leto_izdaje, pot_do_baze)
+  sestevek = racun.skupni_sestevek_prodaje(stevilka_racuna, leto_izdaje, pot_do_baze)
+  prodani_izdelki = racun.prodani_izdelki(stevilka_racuna, leto_izdaje, pot_do_baze)
+  blagajnik = racun.blagajnik(stevilka_racuna, leto_izdaje, pot_do_baze)
+  datum = racun.datum_izdaje(stevilka_racuna, leto_izdaje, pot_do_baze)
+  podatki_poslovalnice = racun.podatki_poslovalnice(stevilka_racuna, leto_izdaje, pot_do_baze)
   return render_template("izpis_racunov.html")
 
 
